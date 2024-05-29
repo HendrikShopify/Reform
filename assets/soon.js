@@ -14,11 +14,11 @@ preloaderTl.to(preloader, {
     duration: 2.75,
     ease: "power3.out",
 }, "<").from(logoLeft, {
-    x: "10vw",
+    x: "5vw",
     duration: 1.75,
     ease: "power2.out",
 }, "<").from(logoRight, {
-    x: "-10vw",
+    x: "-5vw",
     duration: 1.75,
     ease: "power2.out",
 }, "<")
