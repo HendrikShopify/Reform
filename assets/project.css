@@ -1,7 +1,7 @@
 :root {
   --text--font-family: var(--font--primary-family);
   --neutrals--neutral-500: #000;
-  --text--font-size: var(--size--1rem);
+  --text--font-size: var(--size--0-9rem);
   --text--line-height: var(--line-height--1-5em);
   --text--letter-spacing: var(--letter-spacing--0em);
   --h1--font-family: var(--font--primary-family);
@@ -42,7 +42,7 @@
   --radius--main: 1rem;
   --size--0-5rem: .5rem;
   --size--0-75rem: .75rem;
-  --radius--small: .125rem;
+  --radius--small: 0rem;
   --brand--primary-100: #e7ff9f;
   --swatch--brand-text\<deleted\|variable-58223b69-87fe-dde7-b8dd-33ab7457ae33\>: var(--swatch--dark\<deleted\|variable-b6de3dc8-5520-0236-77cd-d665fd586e64\>);
   --line-height--1em: 1em;
@@ -72,11 +72,12 @@
   --grid-gap--main: var(--size--1rem);
   --size--0rem: 0rem;
   --space--large: var(--size--3-5rem);
+  --text-medium--font-family: var(--font--secondary-family);
   --text-medium--font-size: var(--size--1-25rem);
+  --text-medium--letter-spacing: var(--letter-spacing--0-05em);
   --swatch--dark-fade\<deleted\|variable-557e4305-722f-6eb9-d262-0c2d58b51adb\>: rgba(34, 34, 32, .2);
   --size--0-125rem: .125rem;
   --size--1rem: 1rem;
-  --padding-vertical--small: var(--size--5rem);
   --padding-vertical--large: var(--size--10rem);
   --text-tiny--font-family: var(--font--primary-family);
   --text-tiny--size: .75rem;
@@ -94,6 +95,7 @@
   --brand--primary-500: #82ae00;
   --neutrals--neutral-100: #fff;
   --neutrals--neutral-200: #cfd2c6;
+  --letter-spacing--0-05em: .05em;
   --text--font-weight: var(--font--primary-regular);
   --text--text-transform: var(--text-transform--none);
   --display--font-weight: var(--font--primary-medium);
@@ -110,7 +112,7 @@
   --h5--text-transform: var(--text-transform--inherit);
   --h6--font-weight: var(--font--primary-medium);
   --h6--text-transform: var(--text-transform--inherit);
-  --font--primary-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font--primary-family: "Gotham Book", sans-serif;
   --font--primary-regular: var(--font-weight--400);
   --font--primary-medium: var(--font-weight--500);
   --font-weight--inherit: 0px;
@@ -139,6 +141,7 @@
   --text-small--font-weight: var(--font--primary-regular);
   --text-small--text-transform: var(--text-transform--inherit);
   --padding-vertical--none: var(--size--0rem);
+  --padding-vertical--small: var(--size--5rem);
   --size--3-5rem: 3.5rem;
   --size--4rem: 4rem;
   --size--4-5rem: 4.5rem;
@@ -159,10 +162,8 @@
   --size--15rem: 15rem;
   --size--16rem: 16rem;
   --text-medium: 0px;
-  --text-medium--font-family: var(--font--primary-family);
   --text-medium--font-weight: var(--font--primary-regular);
   --text-medium--line-height: var(--line-height--1-5em);
-  --text-medium--letter-spacing: var(--letter-spacing--0em);
   --text-medium--text-transform: var(--font-weight--inherit);
   --text-tiny--font-weight: var(--font--primary-regular);
   --text-tiny--line-height: var(--line-height--1em);
@@ -174,6 +175,9 @@
   --brand--secondary-400: #32dccf;
   --brand--secondary-500: #12baba;
   --neutrals--neutral-300: #9a9e8d;
+  --font--secondary-family: Gotham, sans-serif;
+  --font--tertiary-family: Plantin, sans-serif;
+  --size--0-9rem: .9rem;
   --swatch--dark\<deleted\|variable-b6de3dc8-5520-0236-77cd-d665fd586e64\>: #353233;
 }
 
@@ -1230,6 +1234,7 @@ blockquote {
 }
 
 .u-primary-medium {
+  font-family: var(--text-medium--font-family);
   font-weight: var(--font--primary-medium);
 }
 
@@ -1242,11 +1247,10 @@ blockquote {
 }
 
 .u-text-medium {
-  font-family: var(--text-large--font-family);
-  color: var(--swatch--brand-text\<deleted\|variable-58223b69-87fe-dde7-b8dd-33ab7457ae33\>);
+  font-family: var(--text-medium--font-family);
   font-size: var(--text-medium--font-size);
   line-height: var(--text-large--line-height);
-  letter-spacing: var(--text-large--letter-spacing);
+  letter-spacing: var(--text-medium--letter-spacing);
   font-weight: var(--text-medium--font-weight);
   text-transform: var(--text-large--text-transform);
 }
@@ -1306,7 +1310,7 @@ blockquote {
 }
 
 .max-width-medium {
-  max-width: 20rem;
+  max-width: 21rem;
 }
 
 .max-width-small {
@@ -1454,7 +1458,7 @@ blockquote {
 
 .container-large {
   width: 100%;
-  max-width: 100rem;
+  max-width: 120rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1481,8 +1485,8 @@ blockquote {
 }
 
 .padding-section-small {
-  padding-top: var(--padding-vertical--small);
-  padding-bottom: var(--padding-vertical--small);
+  padding-top: var(--size--3rem);
+  padding-bottom: var(--size--3rem);
 }
 
 .padding-section-medium {
@@ -1771,15 +1775,19 @@ blockquote {
 }
 
 .form_input {
+  border-style: none none solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, .3) rgba(0, 0, 0, .3) var(--neutrals--neutral-500);
   border-radius: var(--radius--small);
   background-color: var(--neutrals--transparent);
+  outline-offset: 0px;
   color: var(--neutrals--neutral-500);
   font-size: var(--text--font-size);
-  border: 1px solid rgba(0, 0, 0, .3);
+  outline: 3px #000;
   width: 100%;
   height: 2.5rem;
   margin-bottom: 0;
-  padding: 0 1rem;
+  padding: 0 0 0 0;
 }
 
 .form_input:focus {
@@ -1965,6 +1973,10 @@ blockquote {
   width: 2rem;
   height: 2rem;
   display: flex;
+}
+
+.collection-card {
+  width: 100%;
 }
 
 .collection-card_top {
@@ -2190,11 +2202,11 @@ blockquote {
 }
 
 .form_newsletter-wrap {
+  border-style: none;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, .3) rgba(0, 0, 0, .3) var(--neutrals--neutral-500);
   border-radius: var(--radius--small);
-  border: 1px solid rgba(0, 0, 0, .3);
   width: 100%;
-  padding: .25rem;
-  display: flex;
   position: relative;
 }
 
@@ -2635,7 +2647,7 @@ blockquote {
 }
 
 .blog_content {
-  grid-column: 8 / span 5;
+  grid-column: 4 / span 5;
 }
 
 .contact_form {
@@ -3063,8 +3075,8 @@ blockquote {
 
 .preloader {
   z-index: 9999;
-  background-color: var(--brand--secondary-100);
-  display: none;
+  background-color: white;
+  display: flex;
   position: fixed;
   top: 0%;
   bottom: 0%;
@@ -3192,6 +3204,53 @@ blockquote {
 
 .edit-address_body {
   padding: 0 2rem 2rem;
+}
+
+.u-grid-breakout {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  grid-template-rows: auto;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-template-columns: var(--grid-breakout);
+  display: grid;
+}
+
+.section_soon {
+  padding-top: var(--size--3rem);
+  padding-bottom: var(--size--3rem);
+  height: 100vh;
+  max-height: 100svh;
+}
+
+.soon_comp.u-vflex-stretch-between {
+  height: calc(100svh - 6rem);
+}
+
+.soon_logo.u-vflex-left-top {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.soon_logo-1 {
+  width: 47.61vw;
+  max-width: 42.849rem;
+}
+
+.soon_logo-2 {
+  width: 35.19vw;
+  max-width: 31.671rem;
+  margin-left: auto;
+}
+
+.soon_image {
+  flex: 0 auto;
+  width: 100%;
+  max-height: 40vh;
+  overflow: hidden;
+}
+
+.letter-spacing-005 {
+  letter-spacing: var(--letter-spacing--0-05em);
 }
 
 @media screen and (max-width: 991px) {
@@ -3349,6 +3408,10 @@ blockquote {
     width: 3rem;
     height: 3rem;
   }
+
+  .section_soon {
+    max-height: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -3483,6 +3546,28 @@ blockquote {
   .header_search {
     display: none;
   }
+
+  .section_soon {
+    padding-top: var(--size--1-25rem);
+    padding-bottom: var(--size--1-5rem);
+  }
+
+  .soon_comp.u-vflex-stretch-between {
+    height: calc(100svh - 2.5rem);
+  }
+
+  .soon_logo.u-vflex-left-top.u-gap-small {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .soon_logo-1 {
+    width: 57.6081vw;
+  }
+
+  .soon_logo-2 {
+    width: 42.5799vw;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -3569,9 +3654,22 @@ blockquote {
   .article-grid_item {
     grid-column: span 6;
   }
+
+  .u-grid-breakout {
+    grid-template-columns: var(--grid-breakout-single);
+  }
+
+  .soon_logo.u-vflex-left-top.u-gap-small {
+    grid-column-gap: .75rem;
+    grid-row-gap: .75rem;
+  }
+
+  .soon_content.u-hflex-between-bottom.u-gap-small {
+    padding-left: 1.25rem;
+  }
 }
 
-#w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecce-7eed0e0a, #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecfb-7eed0e0a {
+#w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecce-cafbf06b, #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecfb-cafbf06b {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 

@@ -1,10 +1,10 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero"
+    "soon": {
+      "type": "soon"
     }
   },
   "order": [
-    "hero"
+    "soon"
   ]
 }
