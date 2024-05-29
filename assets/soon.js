@@ -9,7 +9,7 @@ preloaderTl.to(preloader, {
   autoAlpha: 0,
   ease: "power3.out",
 }).from(".soon_image img", {
-    scale: 1.1,
+    scale: 1.25,
     rotate: 2,
     duration: 2.75,
     ease: "power3.out",
