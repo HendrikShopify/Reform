@@ -1,0 +1,80 @@
+<script src="{{ "quick-view.js" | asset_url }}" defer=""></script>
+  
+<div class="quickview">
+    <div class="quickview_background"></div>
+    <div class="quickview_modal">
+      <div id="qvImages" scrollbar="" class="quickview_images">
+        <div class="quickview_image"><img src="" alt="{{ image }}"></div>
+      </div>
+      <div class="quickview_header">
+        <div id="qvTitle" class="u-h3">Product title</div><button class="icon-large" id="quickViewClose"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20" fill="none">
+            <g clip-path="url(#clip0_78_4066)">
+              <path d="M19.2857 0.714294L0.714294 19.2857" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+              <path d="M0.714294 0.714294L19.2857 19.2857" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+            </g>
+            <defs>
+              <clippath id="clip0_78_4066">
+                <rect width="20" height="20" fill="currentColor"></rect>
+              </clippath>
+            </defs>
+          </svg></button>
+      </div>
+      <div scrollbar="" class="quickview_body u-vflex-stretch-top u-gap-small">
+        <div class="quickview_product-form u-vflex-stretch-top u-gap-medium">
+          <div class="price-wrap u-hflex-left-top u-gap-tiny u-hflex-nowrap">
+            <div id="qvPrice" class="u-text-medium">19,90</div>
+            <div id="qvCompareAtPrice" class="u-strikethrough">40,00</div>
+          </div>
+          <div id="qvDescription" class="u-rich-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+          </div>
+          <form class="product-form u-vflex-stretch-top u-gap-small"><input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            <fieldset class="variant-opions">
+              <legend class="margin-bottom margin-xsmall u-text-small">{{ option.name }}</legend>
+              <div class="variant-option"><input class="variant-option_input" type="radio" name="{{ option.name }}" id="{{ option.name | handlize }}-{{ value | handlize }}" checked="" value="{{ value }}"><label class="variant-option_label" for="{{ value.name | handlize }}-{{ value | handlize }}">{{ value }}</label></div>
+              <div class="variant-option is--disabled"><input class="variant-option_input" type="radio" name="{{ option.name }}" id="{{ option.name | handlize }}-{{ value | handlize }}" checked="" value="{{ value }}"><label class="variant-option_label" for="{{ value.name | handlize }}-{{ value | handlize }}">{{ value }}</label></div>
+              <div class="variant-option"><input class="variant-option_input" type="radio" name="{{ option.name }}" id="{{ option.name | handlize }}-{{ value | handlize }}" checked="" value="{{ value }}"><label class="variant-option_label" for="{{ value.name | handlize }}-{{ value | handlize }}">{{ value }}</label></div>
+            </fieldset>
+            <div class="product-form_buttons u-hflex-left-center u-hflex-nowrap u-gap-tiny margin-top margin-small">
+              <div class="quantity-selector u-hflex-left-center u-hflex-nowrap">
+                <div class="quantity-selector_button" quantitybutton="dec" role="button">
+                  <div class="icon-button" aria-label="Decrease quantity">
+                    <div class="icon-regular"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20" fill="none">
+                        <path d="M0.714306 10L19.2857 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                        <path d="M14.2857 15L19.2857 10L14.2857 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                      </svg></div>
+                    <div class="loader hide"></div>
+                  </div>
+                </div><input class="quantity-selector_input" type="number" aria-label="Quantity" name="quantity" value="1">
+                <div class="quantity-selector_button" quantitybutton="inc" role="button">
+                  <div class="icon-button" aria-label="Increase quantity">
+                    <div class="icon-regular"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20" fill="none">
+                        <path d="M0.714306 10L19.2857 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                        <path d="M14.2857 15L19.2857 10L14.2857 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                      </svg></div>
+                    <div class="loader hide"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-form_atc-button max-width-full u-vflex-stretch-center"><button class="button {% if product.selected_or_first_available_variant.available == false %}
+                is--disabled
+              {% endif %}" type="submit" value="Add to cart" aria-label="Add to cart"
+                  style="color: rgb(0, 0, 0); background-color: rgb(185, 245, 7);">
+                  <div class="button_text">Add to cart</div>
+                  <div class="button_loader u-hflex-center-center hide">
+                    <div class="loader"></div>
+                  </div>
+                  <div class="icon-regular"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"
+                      fill="none">
+                      <path d="M0.714306 10L19.2857 10" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                      <path d="M14.2857 15L19.2857 10L14.2857 5" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                    </svg></div>
+                </button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

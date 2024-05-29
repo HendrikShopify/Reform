@@ -1,0 +1,30 @@
+{% assign blog = section.settings.blog %}
+
+
+
+
+
+  {% schema %}
+    {
+      "name": "Featured articles",
+      "presets": [
+          {
+          "name": "Featured articles"
+          }
+      ],
+      "limit": 1,
+      "settings": [
+          {
+              "type": "text",
+              "id": "title",
+              "label": "Title",
+              "default": "Read our blog"
+          },
+          {
+              "type": "blog",
+              "id": "blog",
+              "label": "Blog"
+          }
+          ]
+    }
+    {% endschema %}

@@ -1,0 +1,73 @@
+
+
+{%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' -%}
+    {%- assign temp = template | split: '.' | first -%}
+
+    <nav class="breadcrumbs u-vflex-left-center">
+
+    {%- case temp -%}
+    {%- when 'page' -%}
+        <ol role="list" class="u-hflex-left-center w-list-unstyled">
+            <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ shop.url }}">Home</a>
+            </li>
+            <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+            </li>
+          </ol>
+    {%- when 'product' -%}
+	    <ol role="list" class="u-hflex-left-center w-list-unstyled">
+        <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ shop.url }}">Home</a>
+            </li>
+        {%- if collection.url -%}
+            <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ collection.url }}">{{ collection.title }}</a>
+            </li>
+        {%- endif -%}
+            <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
+            </li>
+          </ol>        
+    {%- when 'collection' and collection.handle -%}
+        <ol role="list" class="u-hflex-left-center w-list-unstyled">
+        <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ shop.url }}">Home</a>
+            </li>
+            <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ collection.url }}">{{ collection.title }}</a>
+            </li>
+          </ol>   
+    {%- when 'blog' -%}
+        <ol role="list" class="u-hflex-left-center w-list-unstyled">
+            <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ shop.url }}">Home</a>
+            </li>
+            <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
+            </li>
+          </ol>
+    {%- when 'article' -%}
+        <ol role="list" class="u-hflex-left-center w-list-unstyled">
+            <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ shop.url }}">Home</a>
+            </li>
+            <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ blog.url }}">{{ blog.title }}</a>
+            </li>
+            <li class="breadcrumbs_item">
+              <a class="u-text-small" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
+            </li>
+          </ol>
+  {%- endcase -%}
+
+  </nav>
+
+{%- endunless -%}
+
+
+
+          
+         
+          
+          

@@ -1,0 +1,22 @@
+{% comment %} 
+  
+{% form 'customer_login', class: 'REPLACE_CLASSES_HERE' %}
+	{{ form.errors | default_errors }}
+	
+	REPLACE_FORM_CONTENT_HERE
+	
+{% endform %} 
+
+
+{% form 'recover_customer_password', class: 'REPLACE_CLASSES_HERE'  %}
+  {{ form.errors | default_errors }}
+  
+  REPLACE_FORM_CONTENT_HERE
+  
+{% endform %}
+
+
+{% endcomment %}
+
+<script src="{{ 'login.js' | asset_url }}" defer="defer"></script>
+

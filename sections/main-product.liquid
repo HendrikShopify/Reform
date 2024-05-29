@@ -1,0 +1,10 @@
+<script src="{{ 'product-form.js' | asset_url }}" defer=""></script>
+<script src="{{ " media-slider.js"| asset_url }}" defer=""></script>
+
+{%- liquid
+assign variants_available_arr = product.variants | map: 'available'
+assign variants_option1_arr = product.variants | map: 'option1'
+assign variants_option2_arr = product.variants | map: 'option2'
+assign variants_option3_arr = product.variants | map: 'option3'
+-%}
+

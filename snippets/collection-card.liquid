@@ -1,0 +1,13 @@
+<div class="swiper-slide is--4">
+    <a class="collection-card u-vflex-left-top u-gap-tiny" href="{{ collection.url }}">
+        <div class="collection-card_top">
+            <div class="image-wrap"
+                style="background-image: url({{ collection.image | image_url: width: 1 }});  background-repeat: no-repeat; background-size: 100%;"
+                lazyloadwrap="true"><img class="image" src="{{ collection.image | image_url: width: 500 }}"
+                    alt="{{ collection.image.alt }}" loading="lazy"></div>
+        </div>
+        <div class="collection-card_bottom">
+            <div>{{ collection.title }}</div>
+        </div>
+    </a>
+</div>

@@ -1,0 +1,29 @@
+{% assign collections = section.settings.collections %}
+
+
+
+
+  {% schema %}
+  {
+    "name": "Featured collections",
+    "presets": [
+        {
+        "name": "Featured collections"
+        }
+    ],
+    "limit": 1,
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Shop by collections"
+        },
+        {
+            "type": "collection_list",
+            "id": "collections",
+            "label": "Collections"
+        }
+        ]
+  }
+  {% endschema %}

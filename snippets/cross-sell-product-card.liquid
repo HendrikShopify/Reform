@@ -1,0 +1,46 @@
+<div data-first-variant-id="{{ product.selected_or_first_available_variant.id }}" data-handle="{{ product.handle }}"
+    id="w-node-_42a296ff-5266-0923-4a6a-074f53c80e52-53c80e52" class="cs-product-card u-vflex-left-top u-gap-tiny">
+    <div class="cs-product-card_top">
+        <div lazyLoadWrap class="image-wrap"
+            style="background-image: url({{ product.featured_image | image_url: width: 1 }});  background-repeat: no-repeat; background-size: 100%;">
+            <img class="image" src="{{ product.featured_image | image_url: width: 300 }}"
+                alt="{{ product.featured_image.alt  }}"></div>
+        <div class="cs-product-card_atc-wrap"><button button-action="addToCart" tooltip-content="Add to cart"
+                class="icon-button">
+                <div class="pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
+                        viewBox="0 0 20 20" fill="none">
+                        <g clip-path="url(#clip0_78_4085)">
+                            <path
+                                d="M0.725037 0.714294H4.21385L5.45671 13.0714C5.50837 13.4121 5.6814 13.7226 5.94393 13.9457C6.20644 14.1689 6.54077 14.2896 6.88528 14.2857H15.8853C16.1969 14.302 16.5051 14.2158 16.763 14.0404C17.021 13.865 17.2144 13.61 17.3139 13.3143L19.2139 7.60001C19.2847 7.38518 19.3036 7.15658 19.2687 6.93307C19.234 6.70954 19.1466 6.49747 19.0139 6.31429C18.8756 6.11955 18.6906 5.96259 18.476 5.85777C18.2614 5.75295 18.0239 5.70362 17.7853 5.71429H4.71385"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                vector-effect="non-scaling-stroke"></path>
+                            <path
+                                d="M15.6424 19.2857C15.248 19.2857 14.9282 18.9659 14.9282 18.5714C14.9282 18.177 15.248 17.8571 15.6424 17.8571C16.0369 17.8571 16.3567 18.177 16.3567 18.5714C16.3567 18.9659 16.0369 19.2857 15.6424 19.2857Z"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                vector-effect="non-scaling-stroke"></path>
+                            <path
+                                d="M6.35674 19.2857C5.96224 19.2857 5.64246 18.9659 5.64246 18.5714C5.64246 18.177 5.96224 17.8571 6.35674 17.8571C6.75123 17.8571 7.07103 18.177 7.07103 18.5714C7.07103 18.9659 6.75123 19.2857 6.35674 19.2857Z"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                vector-effect="non-scaling-stroke"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_78_4085">
+                                <rect width="20" height="20" fill="currentColor"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg></div>
+                <div class="button_loader pointer-events-none u-hflex-center-center hide">
+                    <div class="loader"></div>
+                </div>
+            </button></div>
+    </div>
+    <div class="cs-product-card_bottom u-vflex-left-top u-gap-xtiny">
+        <div class="u-text-small">{{ product.title }}</div>
+        <div class="price-wrap u-hflex-left-top u-gap-tiny u-hflex-nowrap">
+            <div s-object="{{ product.selected_or_first_available_variant.price | money }}" productprice=""
+                class="u-text-small u-primary-bold">$19,00</div>
+            <div s-object="{{ product.selected_or_first_available_variant.compare_at_price | money }}"
+                productcompareatprice="" class="u-text-tiny u-strikethrough">$29,00</div>
+        </div>
+    </div>
+</div>

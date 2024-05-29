@@ -1,0 +1,57 @@
+{%- if paginate.parts.size > 0 -%}
+
+<nav class="pagination" role="navigation">
+  <ul role="list" class="pagination_list u-hflex-left-center u-gap-tiny w-list-unstyled">
+
+    {%- if paginate.previous -%}
+    <li class="pagination_item is--prev">
+      <a class="icon-button" href="{{ paginate.previous.url }}{{ anchor }}">
+        <div class="icon-regular"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20" fill="none">
+            <path d="M0.714306 10L19.2857 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              vector-effect="non-scaling-stroke"></path>
+            <path d="M14.2857 15L19.2857 10L14.2857 5" stroke="currentColor" stroke-linecap="round"
+              stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+          </svg></div>
+        <div class="loader hide"></div>
+      </a>
+    </li>
+    {%- endif -%}
+
+    {%- for part in paginate.parts -%}
+    {%- if part.is_link -%}
+    <li class="pagination_item">
+      <a class="pagination_number" href="{{ part.url }}{{ anchor }}">
+        <div>{{- part.title -}}</div>
+      </a>
+    </li>
+    {%- else -%}
+    {%- if part.title == paginate.current_page -%}
+    <li class="pagination_item is--active">
+      <a class="pagination_number" href="{{ part.url }}{{ anchor }}">
+        <div>{{- part.title -}}</div>
+      </a>
+    </li>
+    {%- else -%}
+    <li class="pagination_item"><span>{{ part.title }}</span></li>
+    {%- endif -%}
+    {%- endif -%}
+    {%- endfor -%}
+
+    {%- if paginate.next -%}
+    <li class="pagination_item is--next">
+      <a class="icon-button" href="{{ paginate.next.url }}{{ anchor }}">
+        <div class="icon-regular"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20" fill="none">
+            <path d="M0.714306 10L19.2857 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              vector-effect="non-scaling-stroke"></path>
+            <path d="M14.2857 15L19.2857 10L14.2857 5" stroke="currentColor" stroke-linecap="round"
+              stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+          </svg></div>
+        <div class="loader hide"></div>
+      </a>
+    </li>
+    {%- endif -%}
+
+  </ul>
+</nav>
+
+{%- endif -%}

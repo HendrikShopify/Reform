@@ -1,0 +1,76 @@
+{% assign related_products = product.metafields.custom.related_products.value %}
+{% if related_products %}
+
+<section data-theme="inherit" class="section_related-products">
+  <div class="padding-global padding-section-small">
+    <div class="container-large">
+      <div>
+        <div class="swiper-component is--default">
+          <div class="swiper_header u-hflex-between-bottom u-hflex-nowrap margin-bottom margin-small">
+            <h2 class="u-h3">{{ section.settings.title }}</h2>
+            <div class="swiper_button-wrap u-hflex-left-top u-gap-xsmall">
+              <div class="swiper-prev">
+                <div type="button" aria-label="Previous slide" class="icon-button">
+                  <div class="pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
+                      viewbox="0 0 20 20" fill="none">
+                      <path d="M19.2857 10L0.714294 10" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                      <path d="M5.71429 5L0.714294 10L5.7143 15" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                    </svg></div>
+                  <div class="button_loader u-hflex-center-center pointer-events-none hide">
+                    <div class="loader"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-next">
+                <div type="button" aria-label="Next slide" class="icon-button">
+                  <div class="pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
+                      viewbox="0 0 20 20" fill="none">
+                      <path d="M0.714306 10L19.2857 10" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                      <path d="M14.2857 15L19.2857 10L14.2857 5" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                    </svg></div>
+                  <div class="button_loader u-hflex-center-center pointer-events-none hide">
+                    <div class="loader"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-space-between="16" data-slides-per-view="4" data-loop="false" data-slides-per-group="1"
+            class="swiper is--default">
+            <div id="w-node-c51fe8ae-6bd8-95a8-34d5-01a8d3a1041e-d3a10414" class="swiper-wrapper is--default">
+
+              {% for product in related_products %}
+              <div class="swiper-slide is--4">
+                {% render 'product-card', product: product %}
+              </div>
+              {% endfor %}
+
+
+            </div>
+          </div>
+          <div class="swiper_footer margin-top margin-small u-hflex-right-top"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endif %}
+
+{% schema %}
+{
+"name": "Related products",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"default": "Related products",
+"label": "Title"
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,21 @@
+<script src="{{ 'localization.js' | asset_url }}" defer="defer"></script>
+
+{% form 'localization', class: "localization u-vflex-left-top u-gap-xtiny" %}
+    <button class="localization_button"
+        type="button">{{ localization.language.endonym_name | capitalize }}
+        <div class="icon-tiny"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20" fill="none">
+                <path d="M4.5 7.25L10 12.75L15.5 7.25" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+            </svg></div></button>
+    <ul scrolbar="" role="list" class="localization_list hide w-list-unstyled">
+        
+    {% for language in localization.available_languages %}
+        <li class="localization_item">
+            <a class="localization_link" href="#" {% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}" data-value="{{ language.iso_code }}">
+            {{ language.endonym_name | capitalize }}
+          </a>
+        </li>
+    {% endfor %}
+    </ul>
+    <input id='languageInput' type="hidden" name="language_code" value="{{ localization.language.iso_code }}">
+{% endform %}

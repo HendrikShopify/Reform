@@ -1,0 +1,371 @@
+<div class="page_code_wrap">
+    <div class="page_code_base w-embed">
+      <style>
+/* variables */
+:root {
+	--font-weight--inherit: inherit;
+	--font-weight--100: 100;
+	--font-weight--200: 200;
+	--font-weight--300: 300;
+	--font-weight--400: 400;
+	--font-weight--500: 500;
+	--font-weight--600: 600;
+	--font-weight--700: 700;
+	--font-weight--800: 800;
+	--font-weight--900: 900;
+	--text-transform--none: none;
+	--text-transform--uppercase: uppercase;
+	--text-transform--capitalize: capitalize;
+	--text-transform--lowercase: lowercase;
+	--text-transform--inherit: inherit;
+}
+/* default styles */
+body {
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6, p, label, blockquote {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+button {
+	background-color: unset;
+	padding: unset;
+	text-align: inherit;
+}
+img::selection {
+	background: transparent;
+}
+:is(h1, h2, h3, h4, h5, h6, p) a {
+	text-decoration: underline;
+}
+.w-richtext > *:first-child {
+	margin-top: 0;
+}
+.w-richtext > *:last-child {
+	margin-bottom: 0;
+}
+video {
+	width: 100%;
+	object-fit: cover;
+}
+video.wf-empty {
+	padding: 0;
+}
+svg {
+	display: block;
+}
+section, header, footer {
+	position: relative;
+}
+/* Client first spacing */
+/* line clamp */
+.u-line-clamp-1, .u-line-clamp-2, .u-line-clamp-3, .u-line-clamp-4 {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+.u-line-clamp-2 { -webkit-line-clamp: 2; }
+.u-line-clamp-3 { -webkit-line-clamp: 3; }
+.u-line-clamp-4 { -webkit-line-clamp: 4; }
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex;
+}
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+.margin-0 {
+  margin: 0rem !important;
+}
+.padding-0 {
+  padding: 0rem !important;
+}
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+</style>
+    </div>
+    <div class="page_code_responsive w-embed">
+      <style>
+/* desktop */
+:root {
+	/* custom */
+}
+/* tablet */
+@media screen and (max-width: 991px) {
+	:root {
+		/* custom */
+		--padding-horizontal--main: 2rem;
+		/* adaptive sizes */
+		--size--2rem: 1.75rem;
+		--size--2-5rem: 2.18rem;
+		--size--3rem: 2.52rem;
+		--size--3-5rem: 2.73rem;
+		--size--4rem: 3rem;
+		--size--4-5rem: 3.375rem;
+		--size--5rem: 3.75rem;
+		--size--5-5rem: 4.125rem;
+		--size--6rem: 4.5rem;
+		--size--6-5rem: 4.875rem;
+		--size--7rem: 5.25rem;
+		--size--7-5rem: 5.625rem;
+		--size--8rem: 6rem;
+		--size--8-5rem: 6.375rem;
+		--size--9rem: 6.75rem;
+		--size--9-5rem: 7.125rem;
+		--size--10rem: 7.5rem;
+		--size--11rem: 8.25rem;
+		--size--12rem: 9rem;
+		--size--13rem: 9.75rem;
+		--size--14rem: 10.5rem;
+		--size--15rem: 11.25rem;
+		--size--16rem: 12rem;
+	}
+}
+/* landscape */
+@media screen and (max-width: 767px) {
+	:root {
+		/* custom */
+		--padding-horizontal--main: 1rem;
+		/* adaptive sizes */
+		--size--2-5rem: 2rem;
+		--size--3rem: 2.25rem;
+		--size--3-5rem: 2.375rem;
+		--size--4rem: 2.5rem;
+		--size--4-5rem: 2.75rem;
+		--size--5rem: 3rem;
+		--size--5-5rem: 3.25rem;
+		--size--6rem: 3.5rem;
+		--size--6-5rem: 3.75rem;
+		--size--7rem: 4rem;
+		--size--7-5rem: 4.25rem;
+		--size--8rem: 4.5rem;
+		--size--8-5rem: 4.75rem;
+		--size--9rem: 5rem;
+		--size--9-5rem: 5.25rem;
+		--size--10rem: 5.5rem;
+		--size--11rem: 5.75rem;
+		--size--12rem: 6rem;
+		--size--13rem: 6.5rem;
+		--size--14rem: 7rem;
+		--size--15rem: 7.5rem;
+		--size--16rem: 8rem;
+	}
+}
+/* portrait */
+@media screen and (max-width: 479px) {
+	:root {
+		/* custom */
+	}
+}
+</style>
+    </div>
+    <div class="page_code_custom w-embed">
+      <style>
+.loader {
+	position: absolute;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+.breadcrumbs_item:not(:last-child):after {
+  content: '/';
+  margin: 0 .5rem;
+  font-size: 0.75rem;
+}
+.form_icon-field .form_input {
+border-radius: 0 var(--radius--small) var(--radius--small); 0;
+}
+textarea, input {
+	resize: none;
+  outline: none; 
+}
+select {
+      -webkit-appearance: none; /* Remove default arrow for WebKit browsers */
+      -moz-appearance: none; /* Remove default arrow for Firefox */
+      appearance: none; /* Remove default arrow for modern browsers */
+      outline: none; /* Remove default blue outline */
+}
+.radio-button_label:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 24px; /* adjusted width */
+  height: 24px; /* adjusted height */
+  border: 1px solid #00000030;
+  border-radius: 50%;
+}
+.radio-button input:checked + .radio-button_label:before {
+  background-color: #000; /* changed color to black */
+}
+.checkbox_label:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 24px; /* adjusted width */
+  height: 24px; /* adjusted height */
+  border: 1px solid #00000030;
+  border-radius: 0.25rem;
+}
+.checkbox input:checked + .checkbox_label:before {
+  background-color: #000; /* changed color to black */
+}
+/* SWITCH */
+.switch_slider:before {
+  position: absolute;
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  left: 0.25rem;
+  bottom: 0.25rem;
+  background-color: #00000030;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+.switch input:checked + .switch_slider {
+  background-color: #000000;
+  outline: black;
+}
+.switch input:checked + .switch_slider:before {
+  background-color: white;
+}
+.switch input:checked + .switch_slider:before {
+  transform: translateX(1.25rem);
+}
+/* Hide the number input arrows */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+.variant-option input[type=radio]:checked + label {
+background-color: black;
+color: white;
+}
+.tooltip:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent; /* Adjust size as needed */
+  border-right: 4px solid transparent; /* Adjust size as needed */
+  border-top: 4px solid black; /* Adjust size and color as needed */
+}
+/*width*/
+[scrollbar]::-webkit-scrollbar {
+  width:2px;
+  height:2px;
+}
+/*track*/
+[scrollbar]::-webkit-scrollbar-track {
+background:rgb(255, 255, 255);
+}
+/*thumb*/
+[scrollbar]::-webkit-scrollbar-thumb {
+  background:rgb(0, 0, 0);
+}
+
+svg {
+    pointer-events: none;
+}
+
+
+</style>
+    </div>
+  </div>

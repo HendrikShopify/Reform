@@ -1,0 +1,17 @@
+<div id="w-node-_43022990-121c-afb0-8b07-83530dad7f21-0dad7f21" class="article-card u-vflex-left-top u-gap-xsmall">
+    <div class="article-card_top">
+        <div class="image-wrap"
+            style="background-image: url({{ article.image | image_url: width: 1 }});  background-repeat: no-repeat; background-size: 100%;"
+            lazyloadwrap="true"><img class="image" src="{{ article.image | image_url: width: 500 }}"
+                alt="{{ article.image.alt  }}" loading="lazy"></div>
+    </div>
+    <div class="article-card_bottom u-vflex-left-top u-gap-xsmall">
+        <div class="u-vflex-left-top u-gap-xtiny">
+            <div>{{ article.title }}</div>
+            <p class="u-text-tiny u-line-clamp-3">{{ article.content | strip_html }}</p>
+        </div><a href="{{ article.url }}">
+            <div class="u-text-small">Continue reading</div>
+            <div class="button-link_underscore"></div>
+        </a>
+    </div>
+</div>

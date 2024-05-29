@@ -1,0 +1,27 @@
+{% form 'customer', id: 'contact_form' %}
+{{ form.errors | default_errors }}
+<label class="u-text-medium margin-bottom margin-xsmall" for="newsletter">Join our
+    newsletter</label>
+<div class="form_newsletter-wrap"><input class="form_input is--newsletter" type="text" placeholder="Email"
+        name="contact[email]" id="newsletter">
+    <div class="form_newsletter-submit">
+        <button type="submit" aria-label="Subscribe to newsletter" class="icon-button">
+            <div class="pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20"
+                    fill="none">
+                    <path d="M0.714306 10L19.2857 10" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                    <path d="M14.2857 15L19.2857 10L14.2857 5" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                </svg></div>
+            <div class="button_loader u-hflex-center-center hide">
+                <div class="loader"></div>
+            </div>
+        </button>
+    </div>
+</div>
+{% if form.posted_successfully? %}
+<div class="newsletter_success margin-top margin-xsmall">
+    <div class="u-text-small">Congratz! You have been subscribed!</div>
+</div>
+{% endif %}
+{% endform %}

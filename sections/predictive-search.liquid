@@ -1,0 +1,124 @@
+<script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+
+<div class="pred-search">
+      <div class="pred-search_background"></div>
+      <div class="pred-search_drawer">
+        <div class="pred-search_header u-vflex-stretch-top u-gap-small">
+          <div class="pred-search_close u-hflex-right-center"><button class="icon-regular" id="predSearchClose"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20" fill="none">
+                <g clip-path="url(#clip0_78_4066)">
+                  <path d="M19.2857 0.714294L0.714294 19.2857" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                  <path d="M0.714294 0.714294L19.2857 19.2857" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                </g>
+                <defs>
+                  <clippath id="clip0_78_4066">
+                    <rect width="20" height="20" fill="currentColor"></rect>
+                  </clippath>
+                </defs>
+              </svg></button></div>
+          <form class="search-form u-hflex-between-center u-gap-tiny u-hflex-nowrap padding-tiny" action="{{ routes.search_url }}"><input class="search-form_input" type="text" placeholder="Search products..." name="q" id="modalSearchInput" value="{{ search.terms | escape }}">
+            <button class="icon-button" type="submit">
+              <div class="pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20" fill="none">
+                  <path d="M0.714306 10L19.2857 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                  <path d="M14.2857 15L19.2857 10L14.2857 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                </svg></div>
+              <div class="loader hide"></div>
+            </button>
+          </form>
+        </div>
+        <div class="pred-search_body u-vflex-stretch-top u-gap-medium">
+
+
+{%- if predictive_search.performed -%}
+    
+    {% assign predictive_search_results_size = predictive_search.resources.queries.size
+    | plus: predictive_search.resources.collections.size
+    | plus: predictive_search.resources.products.size
+    | plus: predictive_search.resources.pages.size
+    | plus: predictive_search.resources.articles.size
+    %}
+    
+    {%- if predictive_search_results_size > 0 %}
+        
+        {%- if predictive_search.resources.products.size > 0 -%}
+        
+            <div class="pred-search_items u-vflex-left-top u-gap-xsmall">
+                <div class="u-text-small">Products</div>
+                <ul role="list" class="pred-search_list u-vflex-left-top u-gap-xsmall w-list-unstyled">
+                    {%- for product in predictive_search.resources.products -%}
+                  <li class="u-hflex-left-top">
+                    <div id="w-node-fde084a5-1236-3a76-7b09-e18b970affcd-970affcd" class="search-product-card">
+                      <a class="u-hflex-left-center u-gap-xsmall u-hflex-nowrap" href="{{ product.url }}">
+                        <div class="search-product-card_left">
+                          <div lazyLoadWrap class="image-wrap" style="background-image: url({{ product.featured_image | image_url: width: 1 }});  background-repeat: no-repeat; background-size: 100%;"><img class="image" src="{{ product.featured_image | image_url: width: 120 }}" alt="{{ product.featured_image.alt  }}"></div>
+                        </div>
+                        <div class="search-product-card_right u-vflex-left-center u-gap-tiny">
+                          <div class="u-text-small">{{ product.title }}</div>
+                          <p class="u-text-tiny u-line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                          <div class="price-wrap u-hflex-left-top u-gap-tiny u-hflex-nowrap">
+                            <div s-object="{{ product.selected_or_first_available_variant.price | money }}" productprice="" class="u-text-small u-primary-bold">$19,00</div>
+                            <div s-object="{{ product.selected_or_first_available_variant.compare_at_price | money }}" productcompareatprice="" class="u-text-tiny u-strikethrough">$29,00</div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                {%- endfor -%}
+                </ul>
+                <div class="pred-search_button-wrap u-hflex-right-top max-width-full"><a href="/search?q={{ predictive_search.terms }}" class="button" type="submit">
+                    <div class="button_text">Search for &#x27;{{ predictive_search.terms }}&#x27;</div>
+                    <div class="loader hide"></div>
+                    <div class="icon-regular"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20" fill="none">
+                        <path d="M0.714306 10L19.2857 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                        <path d="M14.2857 15L19.2857 10L14.2857 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                      </svg></div>
+                  </a></div>
+              </div>
+        
+        {%- endif -%}
+    
+    
+        {%- if predictive_search.resources.collections.size > 0 -%}
+        
+            <div class="pred-search_items u-vflex-left-top u-gap-xsmall">
+                <div class="u-text-small">Collections</div>
+                <ul role="list" class="pred-search_list u-vflex-left-top u-gap-xtiny w-list-unstyled">
+                
+                {%- for collection in predictive_search.resources.collections -%}
+        
+                    <li class="u-hflex-left-top">
+                        <a href="{{ collection.url }}">
+                          <div>{{ collection.title }}</div>
+                          <div class="button-link_underscore"></div>
+                        </a>
+                      </li>
+        
+                {%- endfor -%}
+                  
+                </ul>
+              </div>
+          
+           
+        
+        {%- endif -%}
+    
+    {%- else -%}
+    
+    <div class="pred-search_empty">
+        <div class="u-text-medium">No results for &quot;{{ predictive_search.terms }}&quot;, please try something else.</div>
+      </div>
+    
+    {%- endif -%}
+{%- endif -%}
+
+          
+          
+          
+        </div>
+      </div>
+    </div>
+
+{% comment %}
+
+
+
+{% endcomment %}
