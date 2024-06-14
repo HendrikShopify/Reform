@@ -178,7 +178,6 @@
   --font--secondary-family: Gotham, sans-serif;
   --font--tertiary-family: Plantin, sans-serif;
   --size--0-9rem: .9rem;
-  --swatch--dark\<deleted\|variable-b6de3dc8-5520-0236-77cd-d665fd586e64\>: #353233;
 }
 
 .w-layout-blockcontainer {
@@ -3075,8 +3074,8 @@ blockquote {
 
 .preloader {
   z-index: 9999;
-  background-color: white;
-  display: flex;
+  background-color: var(--neutrals--neutral-100);
+  display: none;
   position: fixed;
   top: 0%;
   bottom: 0%;
@@ -3226,18 +3225,20 @@ blockquote {
   height: calc(100svh - 6rem);
 }
 
-.soon_logo.u-vflex-left-top {
-  padding-left: 10vw;
-  padding-right: 10vw;
+.soon_logo {
+  width: 100%;
+  max-width: 65rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .soon_logo-1 {
-  width: 47.61vw;
+  width: 71.415%;
   max-width: 42.849rem;
 }
 
 .soon_logo-2 {
-  width: 35.19vw;
+  width: 52.785%;
   max-width: 31.671rem;
   margin-left: auto;
 }
@@ -3247,6 +3248,11 @@ blockquote {
   width: 100%;
   max-height: 40vh;
   overflow: hidden;
+}
+
+.soon_email {
+  width: 100%;
+  max-width: 20rem;
 }
 
 .letter-spacing-005 {
@@ -3672,5 +3678,3 @@ blockquote {
 #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecce-cafbf06b, #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecfb-cafbf06b {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
-
-
