@@ -178,6 +178,7 @@
   --font--secondary-family: Gotham, sans-serif;
   --font--tertiary-family: Plantin, sans-serif;
   --size--0-9rem: .9rem;
+  --swatch--dark\<deleted\|variable-b6de3dc8-5520-0236-77cd-d665fd586e64\>: #353233;
 }
 
 .w-layout-blockcontainer {
@@ -3577,6 +3578,14 @@ blockquote {
 }
 
 @media screen and (max-width: 479px) {
+  body {
+    font-size: .88rem;
+  }
+
+  .u-text-small {
+    font-size: .75rem;
+  }
+
   .u-grid-column-4 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -3678,3 +3687,4 @@ blockquote {
 #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecce-cafbf06b, #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecfb-cafbf06b {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
+
