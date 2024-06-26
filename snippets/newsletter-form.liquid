@@ -12,9 +12,9 @@
 {% if form.posted_successfully? %}
 <div class="newsletter_success margin-top margin-xsmall">
     <div class="u-text-small">You have been subscribed!</div>
-  {{ form.errors | default_errors }}
 </div>
-
+{{ form.errors | default_errors }}
+  
 {% endif %}
 {% endform %}
 
