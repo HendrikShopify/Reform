@@ -1,5 +1,5 @@
 {% form 'customer', id: 'contact_form' %}
-{{ form.errors | default_errors }}
+
 
 <div class="form_newsletter-wrap u-vflex-left-top u-gap-xsmall"><label class="u-allcaps"
         for="newsletter">Sign up to stay up-to-date</label><input class="form_input" type="text" placeholder="Email"
@@ -12,7 +12,9 @@
 {% if form.posted_successfully? %}
 <div class="newsletter_success margin-top margin-xsmall">
     <div class="u-text-small">You have been subscribed!</div>
+  {{ form.errors | default_errors }}
 </div>
+
 {% endif %}
 {% endform %}
 
