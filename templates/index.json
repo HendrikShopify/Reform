@@ -77,6 +77,8 @@
     "pack": {
       "type": "pack",
       "settings": {
+        "image_1": "shopify:\/\/shop_images\/two_hands_holding_a_bottle_of_water.jpg",
+        "image_2": "shopify:\/\/shop_images\/a_pair_of_white_dumbells_7c366210-b4e6-476d-887b-4f66ba37950c.jpg",
         "title": "Packages",
         "package_1_title": "Class packs",
         "package_1_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
@@ -95,9 +97,10 @@
     "shop": {
       "type": "shop",
       "settings": {
+        "image": "shopify:\/\/shop_images\/a_gym_bag_with_a_pair_of_sport_shoes_next_to_it.jpg",
         "title": "Shop our reformer items",
         "cta": "Go to shop",
-        "url": ""
+        "url": "shopify:\/\/collections\/shop"
       }
     }
   },
