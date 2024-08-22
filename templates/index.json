@@ -1,22 +1,83 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "home-hero": {
-      "type": "home-hero"
+      "type": "home-hero",
+      "settings": {
+        "address_1": "Insert address here",
+        "address_2": "Laren"
+      }
     },
     "intro": {
-      "type": "intro"
+      "type": "intro",
+      "settings": {
+        "intro_text": "At purus blandit cursus morbi diam facilisi tristique. Venenatis iaculis cursus quis nunc iaculis tristique sed. Turpis mattis blandit praesent massa faucibus. Semper massa diam in donec convallis purus. Nunc eget dictumst aliquam bibendum ipsum turpis maecenas neque.",
+        "title": "reformer pilates boutique studio",
+        "intro_text_2": "A modern reformer pilates boutique studio in Laren, North-Holland. We offer high-quality reformer pilates lessons for all levels."
+      }
     },
     "classes": {
-      "type": "classes"
+      "type": "classes",
+      "blocks": {
+        "class_Ufk6Kk": {
+          "type": "class",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/a_pair_of_white_dumbells.jpg",
+            "title": "Level I",
+            "url": "shopify:\/\/pages\/classes"
+          }
+        }
+      },
+      "block_order": [
+        "class_Ufk6Kk"
+      ],
+      "settings": {
+        "title": "Our classes",
+        "description": "Lorem reform dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere",
+        "cta": "View all classes",
+        "global_link": ""
+      }
     },
     "pack": {
-      "type": "pack"
+      "type": "pack",
+      "settings": {
+        "title": "Packages",
+        "package_1_title": "Class packs",
+        "package_1_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
+        "package_1_cta": "Read more",
+        "package_1_url": "",
+        "package_2_title": "Memberships",
+        "package_2_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
+        "package_2_cta": "Read more",
+        "package_2_url": "",
+        "package_3_title": "Personal training",
+        "package_3_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
+        "package_3_cta": "Read more",
+        "package_3_url": ""
+      }
     },
     "shop": {
-      "type": "shop"
+      "type": "shop",
+      "settings": {
+        "title": "Shop our reformer items",
+        "cta": "Go to shop",
+        "url": ""
+      }
     }
   },
   "order": [
-    "home-hero", "intro", "classes", "pack", "shop"
+    "home-hero",
+    "intro",
+    "classes",
+    "pack",
+    "shop"
   ]
 }
