@@ -83,15 +83,15 @@
         "package_1_title": "Class packs",
         "package_1_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
         "package_1_cta": "Read more",
-        "package_1_url": "",
+        "package_1_url": "shopify:\/\/pages\/classes",
         "package_2_title": "Memberships",
         "package_2_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
         "package_2_cta": "Read more",
-        "package_2_url": "",
+        "package_2_url": "shopify:\/\/pages\/packages",
         "package_3_title": "Personal training",
         "package_3_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
         "package_3_cta": "Read more",
-        "package_3_url": ""
+        "package_3_url": "shopify:\/\/pages\/personal-training"
       }
     },
     "shop": {
