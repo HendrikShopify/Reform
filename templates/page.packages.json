@@ -12,10 +12,51 @@
     "hero": {
       "type": "hero",
       "settings": {
+        "title": "Packages",
+        "content": "At purus blandit cursus morbi diam facilisi tristique. Venenatis iaculis cursus quis nunc iaculis tristique sed. Turpis mattis blandit praesent massa faucibus. Semper massa diam in donec convallis purus. Nunc eget dictumst aliquam bibendum ipsum turpis maecenas neque.",
+        "button_text": "Shop now",
+        "button_url": ""
       }
     },
     "packages-list": {
       "type": "packages-list",
+      "blocks": {
+        "package_3ke6eV": {
+          "type": "Package",
+          "settings": {
+            "index": "1.",
+            "title": "class packs",
+            "description": "<p>At purus blandit cursus morbi diam facilisi tristique. Venenatis iaculis cursus quis nunc iaculis tristique sed. Turpis mattis blandit praesent massa faucibus. Semper massa diam in donec convallis purus. Nunc eget dictumst aliquam bibendum ipsum turpis maecenas neque.<\/p><p>First Timer Intro Pack (3 classes) - €50  <br\/>Single Class - €35  <br\/>5 Class Pack - €125  <br\/>10 Class Pack - €230  <br\/>20 Class Pack - €400  <\/p>",
+            "cta": "Buy here",
+            "url": ""
+          }
+        },
+        "package_Vpdida": {
+          "type": "Package",
+          "settings": {
+            "index": "2.",
+            "title": "memberships",
+            "description": "<p>At purus blandit cursus morbi diam facilisi tristique. Venenatis iaculis cursus quis nunc iaculis tristique sed. Turpis mattis blandit praesent massa faucibus. Semper massa diam in donec convallis purus. Nunc eget dictumst aliquam bibendum ipsum turpis maecenas neque.<\/p><p>One year unlimited - €200 p\/m<br\/>Flex unlimited - €250 p\/m<\/p><p>At purus blandit cursus morbi diam facilisi tristique. Venenatis iaculis cursus. <\/p>",
+            "cta": "Buy here",
+            "url": ""
+          }
+        },
+        "package_qwe6Dr": {
+          "type": "Package",
+          "settings": {
+            "index": "",
+            "title": "",
+            "description": "",
+            "cta": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "package_3ke6eV",
+        "package_Vpdida",
+        "package_qwe6Dr"
+      ],
       "settings": {
       }
     }
