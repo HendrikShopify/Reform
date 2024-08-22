@@ -1,4 +1,13 @@
-<script src="{{ "filter.js" | asset_url }}" defer=""></script>
-<script src="{{ "sort.js" | asset_url }}" defer=""></script>
+<section data-theme="inherit" class="section_collection">
+        <div class="padding-global padding-section-small">
+          <div class="collection_grid u-grid-12-col">
 
-
+          {% for product in collection.products %}
+             <div class="collection_product">
+              {% render 'product-card', product: product %}
+            </div>
+          {% endfor %}
+            
+          </div>
+        </div>
+      </section>

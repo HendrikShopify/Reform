@@ -1,0 +1,78 @@
+<section data-theme="inherit" class="section_pt">
+        <div class="padding-global">
+          <div class="pt_comp u-hflex-left-top">
+            <div class="pt_visual"><img src="{{ section.settings.image | img_url: "master" }}" loading="lazy" alt="{{ section.settings.image }}"></div>
+            <div class="pt_content">
+              <div class="pt_grid">
+
+            {% for option in section.blocks %}
+                
+                <div class="pt_item u-vflex-left-top u-gap-small">
+                  <div class="u-h3">{{ option.settings.title }}</div>
+                  <div>{{ option.settings.price }}</div>
+                  <a>
+                    <div class="u-allcaps u-primary-medium">{{ option.settings.cta }}</div>
+                    <div class="button-link_underscore"></div>
+                  </a>
+                </div>
+
+            {% endfor %}
+                
+              </div>
+              <p class="max-width-large">{{ section.settings.description }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {% schema %}
+      {
+        "name": "Personal Training",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "textarea",
+                "id": "description",
+                "label": "Description",
+                "default": "At purus blandit cursus morbi diam facilisi tristique. Venenatis iaculis cursus quis nunc iaculis tristique sed. Turpis mattis blandit praesent massa faucibus. Semper massa diam in donec convallis purus. Nunc eget dictumst aliquam bibendum ipsum turpis maecenas neque."
+            }
+            ],
+        "blocks": [
+            {
+                "type": "option",
+                "name": "Option",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title",
+                        "default": "First time"
+                    },
+                    {
+                        "type": "text",
+                        "id": "price",
+                        "label": "Price",
+                        "default": "€80"
+                    },
+                    {
+                        "type": "text",
+                        "id": "cta",
+                        "label": "CTA"
+                    },
+                    {
+                        "type": "url",
+                        "id": "url",
+                        "label": "URL"
+                    }
+                ]
+
+
+            }
+        ]
+      }
+      {% endschema %}

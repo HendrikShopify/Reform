@@ -1,0 +1,77 @@
+<section data-theme="inherit" class="section_classes-list">
+        <div class="padding-global padding-section-small">
+          <div class="classes-list_comp">
+            <div class="classes-list_grid">
+            
+            {% for class in section.blocks %}
+
+                <div class="classes-list_item">
+                <div class="classes-list_title-wrap u-hflex-center-bottom u-gap-xsmall">
+                  <h2>{{ class.settings.title }}</h2>
+                  {% if class.settings.index %}
+                    <div class="classes-list_index u-h4">{{ class.settings.index }}</div>
+                  {% endif %}
+                </div>
+                <div class="classes-list_image"><img src="{{ class.settings.image | img_url: "master" }}" loading="lazy" alt="{{ class.settings.image }}"></div>
+                <div class="classes-list_content u-vflex-left-top u-gap-small">
+                  <p class="max-width-large">{{ class.settings.description }}</p>
+                  <a href{{ class.settings.url }}>
+                    <div class="u-allcaps u-primary-medium">{{ class.settings.cta }}</div>
+                    <div class="button-link_underscore"></div>
+                  </a>
+                </div>
+              </div>
+                
+            {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {% schema %}
+        {
+          "name": "Classes list",
+          "settings": [
+            ],
+            "blocks": [
+              {
+                "name": "Class",
+                "type": "class",
+                "settings": [
+                    
+              {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+              },{
+                "type": "text",
+                "id": "index",
+                "label": "Title index"
+              },{
+                  "type": "image_picker",
+                  "id": "image",
+                  "label": "Image"
+                },
+                {
+                "type": "textarea",
+                "id": "description",
+                "default": "Lorem reform dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere",
+                "label": "Description"
+                },
+                {
+                    "type": "text",
+                    "id": "cta",
+                    "label": "CTA"
+                },
+              {
+                "type": "url",
+                "id": "url",
+                "label": "Link"
+              }
+              ]
+              }
+            ]
+        }
+        {% endschema %}

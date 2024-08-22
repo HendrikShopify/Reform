@@ -4,7 +4,7 @@ let miniCartDrawer = document.querySelector(".mini-cart_drawer");
 let miniCartBackground = miniCart.querySelector(".mini-cart_background");
 let miniCartCloseButton = document.getElementById("miniCartClose");
 
-let cartCount = document.querySelector("#cartButton .utility-button_number")
+let cartCount = document.querySelectorAll("#cartButton .cart-quanity")
 
 let miniCartOpenState = false;
 
@@ -51,6 +51,7 @@ cartButton.addEventListener("click", () => {
 document.querySelectorAll("a[href*='quantity=0']").forEach((el) => {});
 
 document.addEventListener("click", function (event) {
+  // Close Mini Cart
   if (
     event.target.matches("#miniCartClose") ||
     event.target.matches(".mini-cart_background")
@@ -58,14 +59,22 @@ document.addEventListener("click", function (event) {
     closeMiniCart();
   }
 
+});
+
+document.addEventListener("click", function (event) {
   if (event.target.matches('[button-action="deleteItem"]')) {
     showLoader();
-    const lineItemId = event.target
-      .closest("[data-item-variant-id]")
-      .getAttribute("data-item-variant-id");
-    const newQuantity = 0;
 
-    changeQuantityCart(lineItemId, newQuantity);
+    const closestElement = event.target.closest("[data-item-variant-id]");
+    if (closestElement) {
+      const lineItemId = closestElement.getAttribute("data-item-variant-id");
+      console.log('Line Item ID:', lineItemId);
+
+      const newQuantity = 0;
+      changeQuantityCart(lineItemId, newQuantity);
+    } else {
+      console.error('No closest element with data-item-variant-id found.');
+    }
   }
 });
 
@@ -94,6 +103,7 @@ async function updateMiniCart() {
 
     miniCart.innerHTML = newMiniCartContent;
     addMiniCartAnimation();
+    addLazyLoading();
     if(miniCartOpenState === true) {
       miniCartAnimation.progress(1);
     } else {
@@ -131,6 +141,10 @@ function showLoader() {
 async function updateCartCount() {
     const res = await fetch("/cart.js");
     const cart = await res.json();
-    cartCount.innerHTML = cart.item_count.toString();;
+
+    cartCount.forEach((el) => {
+      el.innerHTML = cart.item_count.toString();
+    });
+
 }
 

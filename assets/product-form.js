@@ -2,7 +2,7 @@ const product = JSON.parse(
   document.getElementById("productJsonScript").innerHTML
 );
 const variantOptions = document.querySelectorAll(
-  ".variant-option input[type='radio']"
+  ".product_info input[type='radio']"
 );
 const productForm = document.querySelector(
   ".section_product .product-form"
@@ -19,7 +19,7 @@ const addToCartInnerHtml = addToCartButton.innerHTML;
 
 variantOptions.forEach((radio) => {
   radio.addEventListener("change", () => {
-    const selectedOptions = Array.from(productForm.querySelectorAll(".variant-option input[type='radio']:checked"), (variant) => variant.value);
+    const selectedOptions = Array.from(productForm.querySelectorAll(".product_info input[type='radio']:checked"), (variant) => variant.value);
 
 
     // Find matching variant

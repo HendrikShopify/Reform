@@ -27,22 +27,23 @@
 
     <script src="{{ 'gsap.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'ScrollTrigger.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'Flip.min.js' | asset_url }}" defer="defer"></script>
     
   </head>
 
-  <body class="template-{{ template | split: '.' | first }}">
+  <body tr-scrollflip-element="component" class="template-{{ template | split: '.' | first }}">
 
     {% render 'custom-code' %}
     {% sections 'header-group' %}
 
-    <main class="page_wrap" role="main" tabindex="-1">
+    <main  class="page_main" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
     {% sections 'footer-group' %}
     {% section 'mini-cart' %}
-    {% section 'quick-view' %}
-    {% section 'predictive-search' %}
+    {% comment %} {% section 'quick-view' %} {% endcomment %}
+    {% comment %} {% section 'predictive-search' %} {% endcomment %}
 
     <script>
 
@@ -55,7 +56,7 @@
     <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global-gsap.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
+    {% comment %} <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script> {% endcomment %}
     <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'format-money.js' | asset_url }}" defer="defer"></script>
 

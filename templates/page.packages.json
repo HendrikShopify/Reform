@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero"
+    },
+    "packages-list": {
+      "type": "packages-list"
+    } 
+  },
+  "order": [
+    "hero", "packages-list"
+  ]
+}

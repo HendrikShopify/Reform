@@ -1,64 +1,98 @@
-// Button hovers
+let heroLinks = document.querySelectorAll(".intro_menu a, .footer_menu a");
 
-// let buttons = document.querySelectorAll(".button, .icon-button, .utility-button");
+heroLinks.forEach((el) => {
+  el.addEventListener("mouseover", () => {
+    el.classList.add("u-primary-medium");
+  });
 
-// buttons.forEach(el => {
+  el.addEventListener("mouseleave", () => {
+    el.classList.remove("u-primary-medium");
+  });
+});
 
-//   let buttonHoverTl = gsap.timeline({ paused: true });
+let images = document.querySelectorAll("[animate-image-in]");
 
-//   buttonHoverTl.to(el, {
-//     backgroundColor: "black",
-//     color: "white",
-//     duration: 0.125
-//   })
+images.forEach((el) => {
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: el,
+      scrub: false,
+    },
+  });
 
-//   el.addEventListener("mouseover", () => {
-//     buttonHoverTl.play();
-//   })
+  tl.from(el, {
+    duration: 1,
+    scale: 1.1,
+    rotate: -2,
+    transform: "blur(2px)",
+    ease: "power1.out",
+  });
+});
 
-//   el.addEventListener("mouseleave", () => {
-//     buttonHoverTl.reverse();
-//   })
+let buttonUnderscores = document.querySelectorAll(".button-link_underscore");
 
-// })
+buttonUnderscores.forEach((el) => {
+  let button = el.parentElement;
 
-// product card hovers
+  button.addEventListener("mouseover", () => {
+    gsap.to(el, { duration: 0.3, width: "20%" });
+  });
 
-// let productCards = document.querySelectorAll(".product-card");
+  button.addEventListener("mouseleave", () => {
+    gsap.to(el, { duration: 0.3, width: "100%" });
+  });
+});
 
-// productCards.forEach(el => {
+let splittedHeadings = document.querySelectorAll("[split-heading]");
 
-//   let images = el.querySelectorAll("img")
+document.addEventListener("DOMContentLoaded", () => {
 
-//   let productCardHoverTl = gsap.timeline({ paused: true });
+    splittedHeadings.forEach((el) => {
+        let words = el.querySelectorAll(".word");
+      
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: el,
+            markers: false,
+            start: "top 70%",
+          },
+        });
+      
+        tl.from(words, {
+          y: "2.25rem",
+          x: "0.75rem",
+          rotate: 3,
+          filter: "blur(2px)",
+          opacity: 0,
+          stagger: { each: 0.1, ease: "none", from: "start" },
+          duration: 1.25,
+          ease: "power3.out",
+        });
+      });
 
-//   productCardHoverTl.to(images, {
-//     scale: 1.05,
-//     duration: 0.125
-//   })
-
-//   el.addEventListener("mouseover", () => {
-//     productCardHoverTl.play();
-//   })
-
-//   el.addEventListener("mouseleave", () => {
-//     productCardHoverTl.reverse();
-//   })
-
-// })
+});
 
 
-// button hover
-// text link button hover
-// icon button hover
-// product card hover
-// blog card hover
-// article card hover
-// menu dropdown hover
-// menu navigation item hover
-// collapsable header hover
-// checkbox hover
-// switch hover
-// variant option hover
-// predictive search product hover
-// form input hover
+
+let fadeUp = document.querySelectorAll("[fade-up]");
+
+fadeUp.forEach((el) => {
+
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: el,
+            markers: false,
+            start: "top 70%",
+        },
+    });
+
+    tl.from(el, {
+        y: "2.25rem",
+        rotate: 1,
+        filter: "blur(2px)",
+        opacity: 0,
+        duration: 1.25,
+        ease: "power3.out",
+    });
+
+})

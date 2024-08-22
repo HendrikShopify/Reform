@@ -1,10 +1,22 @@
 {
   "sections": {
-    "soon": {
-      "type": "soon"
+    "home-hero": {
+      "type": "home-hero"
+    },
+    "intro": {
+      "type": "intro"
+    },
+    "classes": {
+      "type": "classes"
+    },
+    "pack": {
+      "type": "pack"
+    },
+    "shop": {
+      "type": "shop"
     }
   },
   "order": [
-    "soon"
+    "home-hero", "intro", "classes", "pack", "shop"
   ]
 }

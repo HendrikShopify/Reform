@@ -1,0 +1,30 @@
+<footer class="footer {% if template.name == 'index' %}
+  is--home
+{% endif %}">
+      <div class="padding-global">
+        <div class="footer_social u-hflex-between-top u-hflex-nowrap u-gap-small">
+          <div class="insta_comp">
+            <div id="w-node-ee97f6db-363e-51ab-e4b7-e21c7b90db35-01c177fb" class="insta_item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+            <div id="w-node-_0ff973ed-3d37-b475-ca03-2959e6d3c6c3-01c177fb" class="insta_item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+            <div id="w-node-f29042ed-a058-3557-db41-6d09dcd9a3af-01c177fb" class="insta_item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+            <div id="w-node-_7e120803-23be-1abb-182f-08eec429e060-01c177fb" class="insta_item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+            <div id="w-node-_53d87629-f399-964f-61f2-ce80bbc839ec-01c177fb" class="insta_item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+            <div id="w-node-_0867b0c4-6c33-338a-e4d4-86f1372e5ac2-01c177fb" class="insta_item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+          </div>
+          <div class="inta_title u-h1 u-text-align-right">follow us</div>
+        </div>
+        <div class="footer_menu u-vflex-right-top u-gap-tiny margin-top margin-large">
+          {% for link in linklists.main-menu.links %}
+            <a href="{{ link.url }}" class="intro_link u-allcaps">
+              <div>{{ link.title }}</div>
+            </a>
+          {% endfor %}
+        </div>
+        <div class="footer_bottom u-hflex-between-bottom">
+          {% include 'newsletter-form' %}
+          <div class="footer_credits">
+            <p>© {{ "now" | date: "%Y" }} Reform Room by Twntytwo</p>
+          </div>
+        </div>
+      </div>
+    </footer>

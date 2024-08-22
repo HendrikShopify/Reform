@@ -1,73 +1,22 @@
-<div data-first-variant-id="{{ product.selected_or_first_available_variant.id }}" data-handle="{{ product.handle }}"
-  id="w-node-_91486c3b-998a-53a6-af8e-966ad763498d-d763498d" class="product-card">
-  <a class="product-card_link u-vflex-stretch-top u-gap-xsmall" href="{{ product.url }}">
-    <div class="product-card_top">
-      <div class="product-card_sale-label"></div>
-      <div class="product-card_buttons u-hflex-left-top u-gap-tiny"><button type="button"
-          class="icon-button is--product-card" button-action="addToWishlist" tooltip-content="Add to wishlist">
-          <div class="pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20"
-              fill="none">
-              <path
-                d="M10 17.7857L2.1143 10.6429C-2.17142 6.35714 4.12858 -1.87143 10 4.78571C15.8714 -1.87143 22.1429 6.38571 17.8857 10.6429L10 17.7857Z"
-                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke">
-              </path>
-            </svg></div>
-          <div class="button_loader pointer-events-none u-hflex-center-center hide">
-            <div class="loader"></div>
-          </div>
-        </button><button type="button" class="icon-button is--product-card" button-action="quickview"
-          tooltip-content="Quick view">
-          <div class="pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20"
-              fill="none">
-              <path
-                d="M18.9 8.9233C19.1368 9.21861 19.268 9.60228 19.268 10.0001C19.268 10.3979 19.1368 10.7816 18.9 11.0769C17.4 12.893 13.9857 16.4287 9.99999 16.4287C6.01428 16.4287 2.59999 12.893 1.09999 11.0769C0.863075 10.7816 0.731934 10.3979 0.731934 10.0001C0.731934 9.60228 0.863075 9.21861 1.09999 8.9233C2.59999 7.1072 6.01428 3.57144 9.99999 3.57144C13.9857 3.57144 17.4 7.1072 18.9 8.9233Z"
-                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke">
-              </path>
-              <path
-                d="M10 12.8571C11.578 12.8571 12.8571 11.578 12.8571 10C12.8571 8.42204 11.578 7.14285 10 7.14285C8.42204 7.14285 7.14285 8.42204 7.14285 10C7.14285 11.578 8.42204 12.8571 10 12.8571Z"
-                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke">
-              </path>
-            </svg></div>
-          <div class="button_loader pointer-events-none u-hflex-center-center hide">
-            <div class="loader"></div>
-          </div>
-        </button><button type="button" class="icon-button is--product-card" button-action="addToCart"
-          tooltip-content="Add to cart">
-          <div class="pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20"
-              fill="none">
-              <g clip-path="url(#clip0_78_3863)">
-                <path d="M10 0.714294V19.2857" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  vector-effect="non-scaling-stroke"></path>
-                <path d="M0.714294 9.94281H19.2857" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  vector-effect="non-scaling-stroke"></path>
-              </g>
-            </svg></div>
-          <div class="button_loader pointer-events-none u-hflex-center-center hide">
-            <div class="loader"></div>
-          </div>
-        </button></div>
-      <div lazyLoadWrap class="product-card_image-wrap is--top"
-        style="background-image: url({{ product.featured_image | image_url: width: 1 }});  background-repeat: no-repeat; background-size: 100%;">
-        <img class="product-card_image" src="{{ product.featured_image | image_url: width: 1000 }}"
-          alt="{{ product.image.alt }}">
-      </div>
-      <div lazyLoadWrap class="product-card_image-wrap"
-        style="background-image: url({{ product.images[1]| image_url: width: 1 }});  background-repeat: no-repeat; background-size: 100%;">
-        <img class="product-card_image" src="{{ product.images[1]| image_url: width: 1000 }}"
-          alt="{{ product.image.alt }}">
-      </div>
-    </div>
-    <div class="product-card_bottom u-hflex-left-top u-hflex-between-top u-hflex-nowrap">
-      <div class="product-card_title-wrap u-vflex-left-top u-gap-xtiny">
-        <div>{{ product.title }}</div>
-        <div class="u-text-small u-primary-bold">A short description of the product</div>
-      </div>
-      <div class="price-wrap u-hflex-left-top u-gap-tiny u-hflex-nowrap">
-        <div s-object="{{ product.selected_or_first_available_variant.price | money }}" productprice=""
-          class="u-text-small u-primary-bold">$19,00</div>
-        <div s-object="{{ product.selected_or_first_available_variant.compare_at_price | money }}"
-          productcompareatprice="" class="u-text-tiny u-strikethrough">$29,00</div>
-      </div>
-    </div>
-  </a>
-</div>
+<a href="{{ product.url }}" data-first-variant-id="{{ product.selected_or_first_available_variant.id }}" data-handle="{{ product.handle }}" id="w-node-_91486c3b-998a-53a6-af8e-966ad763498d-d763498d" class="product-card">
+                <div href="{{ product.url }}" class="product-card_link u-vflex-left-top u-gap-medium">
+                  <div class="product-card_top">
+                    <div lazyLoadWrap style="background-image: url({{ product.featured_image | image_url: width: 1 }});  background-repeat: no-repeat; background-size: 100%;" class="product-card_image-wrap is--top"><img src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.image.alt }}" class="product-card_image"></div>
+                    <div lazyLoadWrap style="background-image: url({{ product.images[1]| image_url: width: 1 }});  background-repeat: no-repeat; background-size: 100%;" class="product-card_image-wrap"><img src="{{ product.images[1]| image_url: width: 1000 }}" alt="{{ product.image.alt }}" class="product-card_image"></div>
+                  </div>
+                  <div class="product-card_bottom u-hflex-left-top u-hflex-between-top u-hflex-nowrap">
+                    <div class="product-card_title-wrap u-vflex-left-top u-gap-small">
+
+                      <div class="u-h3">{{ product.title }}</div>
+
+                      {% render 'price', product: product %}
+
+                      <div>
+                        <div class="u-allcaps u-primary-medium">Buy now</div>
+                        <div class="button-link_underscore"></div>
+                      </div>
+
+                    </div>
+                  </div>
+  </div>
+</a>

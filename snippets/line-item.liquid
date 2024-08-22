@@ -1,83 +1,32 @@
-<div data-item-variant-id="{{ item.variant_id }}" id="w-node-_73ae24be-1d9d-3c5f-c575-948b3c01c465-3c01c465"
-  class="line-item u-hflex-left-center u-hflex-nowrap u-gap-tiny max-width-full">
-  <div class="line-item_img-wrap"
-    style="background-image: url({{ item.image | image_url: width: 1 }}); background-repeat: no-repeat; background-size: 100%;&quot;">
-    <img src="{{ item.image | image_url: width: 320 }}" alt="{{ item.image.alt }}"
-      s-object="{{ item.image | image_url: width: 320 }}"></div>
-  <div class="line-item_content max-width-full u-vflex-stretch-between u-gap-small">
-    <div class="u-vflex-stretch-between u-gap-xtiny">
-      <div class="u-hflex-between-stretch">
-        <div>{{ item.product.title }}</div>
-        <div class="price-wrap u-hflex-left-top u-gap-tiny u-hflex-nowrap">
-          <div s-object="{{ product.selected_or_first_available_variant.price | money }}" productprice=""
-            class="u-text-small u-primary-bold">$19,00</div>
-          <div s-object="{{ product.selected_or_first_available_variant.compare_at_price | money }}"
-            productcompareatprice="" class="u-text-tiny u-strikethrough">$29,00</div>
-        </div>
-      </div>
-      <div class="u-text-tiny">{{ item.variant.title }}</div>
-    </div>
-    <div class="u-hflex-left-center u-gap-tiny"><button button-action="deleteItem" type="button" class="icon-button is--small">
-        <div class="pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20"
-            fill="none">
-            <g clip-path="url(#clip0_78_4115)">
-              <path d="M1.42857 5H18.5714" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                vector-effect="non-scaling-stroke"></path>
-              <path
-                d="M3.57143 5H16.4286V17.8571C16.4286 18.236 16.278 18.5994 16.0101 18.8673C15.7423 19.1351 15.3789 19.2857 15 19.2857H5C4.62111 19.2857 4.25776 19.1351 3.98984 18.8673C3.72194 18.5994 3.57143 18.236 3.57143 17.8571V5Z"
-                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke">
-              </path>
-              <path
-                d="M6.42857 5.00001V4.28572C6.42857 3.33852 6.80485 2.43011 7.47462 1.76034C8.14439 1.09057 9.0528 0.714294 10 0.714294C10.9472 0.714294 11.8556 1.09057 12.5254 1.76034C13.1952 2.43011 13.5714 3.33852 13.5714 4.28572V5.00001"
-                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke">
-              </path>
-              <path d="M7.85715 9.28781V15.0043" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                vector-effect="non-scaling-stroke"></path>
-              <path d="M12.1429 9.28781V15.0043" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                vector-effect="non-scaling-stroke"></path>
-            </g>
-            <defs>
-              <clippath id="clip0_78_4115">
-                <rect width="20" height="20" fill="currentColor"></rect>
-              </clippath>
-            </defs>
-          </svg></div>
-        <div class="button_loader u-hflex-center-center pointer-events-none hide">
-          <div class="loader"></div>
-        </div>
-      </button>
-      <div class="quantity-selector u-hflex-left-center u-hflex-nowrap">
-        <div class="quantity-selector_button" quantitybutton="dec" role="button">
-          <div type="button" aria-label="Decrease quantity" class="icon-button is--small">
-            <div class="pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20"
-                fill="none">
-                <path d="M0.714294 10H19.2857" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  vector-effect="non-scaling-stroke" stroke-width="1px"></path>
-              </svg></div>
-            <div class="button_loader u-hflex-center-center pointer-events-none hide">
-              <div class="loader"></div>
-            </div>
-          </div>
-        </div><input class="quantity-selector_input is--small" type="number" name="updates[]"
-          value="{{ item.quantity }}">
-        <div class="quantity-selector_button" quantitybutton="inc" role="button">
-          <div type="button" aria-label="Increase quantity" class="icon-button is--small">
-            <div class="pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 20 20"
-                fill="none">
-                <g clip-path="url(#clip0_78_3863)">
-                  <path d="M10 0.714294V19.2857" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                    vector-effect="non-scaling-stroke"></path>
-                  <path d="M0.714294 9.94281H19.2857" stroke="currentColor" stroke-linecap="round"
-                    stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
-                </g>
-              </svg></div>
-            <div class="button_loader u-hflex-center-center pointer-events-none hide">
-              <div class="loader"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div s-object="{{ item.quantity }}" class="line-item_quantity u-hflex-center-center u-text-tiny">1</div>
-</div>
+
+              <div data-item-variant-id="{{ item.variant_id }}" id="w-node-_73ae24be-1d9d-3c5f-c575-948b3c01c465-3c01c465" class="line-item u-hflex-left-top u-hflex-nowrap u-gap-medium">
+                <div class="line-item_img-wrap">
+                  <div style="background-image: url({{ item.product.featured_image | image_url: width: 1 }});  background-repeat: no-repeat; background-size: 100%;" lazyloadwrap="true" class="image-wrap"><img src="{{ item.product.featured_image | image_url: width: 220 }}" alt="{{ item.product.featured_image.alt  }}" loading="lazy" class="image"></div>
+                </div>
+                <div class="line-item_content max-width-full u-vflex-stretch-between u-gap-medium">
+                  <div class="u-vflex-stretch-between u-gap-xtiny">
+                    <div class="u-vflex-stretch-between u-gap-tiny">
+                      <div class="u-primary-medium u-allcaps">{{ item.product.title }}</div>
+                      {% render 'price', product: item.product %}
+                      <div>{{ item.variant.title }}</div>
+                    </div>
+                  </div>
+                  <div class="u-hflex-left-center u-gap-tiny line-item-delete">
+                    <div class="u-cursor-pointer">
+                      <div button-action="deleteItem" class="u-allcaps u-primary-medium">Remove item</div>
+                      <div class="button-link_underscore"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="quantity-selector u-hflex-left-top u-gap-xsmall u-hflex-nowrap"><input type="number" name="updates[]" class="quantity-selector_input is--small" value="{{ item.quantity }}">
+                  <div class="quantity-selector_arrows">
+                    <div quantitybutton="inc" role="button" class="quantity-selector_button u-vflex-center-top"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 9 5" fill="none" class="quantity-selector_arrow">
+                        <path d="M8.02062 3.70228L7.43517 4.24276L4.01031 1.08096L0.585447 4.24276L0 3.70228L4.01031 0L8.02062 3.70228Z" fill="currentColor"></path>
+                      </svg></div>
+                    <div quantitybutton="dec" role="button" class="quantity-selector_button u-vflex-center-center"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 9 5" fill="none" class="quantity-selector_arrow is--down">
+                        <path d="M8.02062 3.70228L7.43517 4.24276L4.01031 1.08096L0.585447 4.24276L0 3.70228L4.01031 0L8.02062 3.70228Z" fill="currentColor"></path>
+                      </svg></div>
+                  </div>
+                </div>
+              </div>
+            

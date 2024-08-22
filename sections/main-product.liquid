@@ -1,5 +1,4 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer=""></script>
-<script src="{{ " media-slider.js"| asset_url }}" defer=""></script>
 
 {%- liquid
 assign variants_available_arr = product.variants | map: 'available'
@@ -8,3 +7,188 @@ assign variants_option2_arr = product.variants | map: 'option2'
 assign variants_option3_arr = product.variants | map: 'option3'
 -%}
 
+<style>
+
+@media (max-width: 768px) {
+
+.is--featured-mobile {  display: none; }
+
+}
+
+    </style>
+
+<section data-theme="inherit" class="section_product">
+        <div class="padding-global padding-section-huge">
+          <div class="product_comp u-hflex-left-top u-hflex-nowrap">
+            <div class="product_image overflow-hidden is--featured"><img src="{{ product.featured_image | img_url: "master" }}" loading="lazy" alt="{{ product.featured_image }}"></div>
+            <div class="product_images u-vflex-stretch-top u-gap-medium">
+                <div class="product_image overflow-hidden is--featured-mobile"><img src="{{ product.featured_image | img_url: "master" }}" loading="lazy" alt="{{ product.featured_image }}"></div>
+                {% for image in product.images %}
+                    {% unless forloop.first %}
+                        <div class="product_image overflow-hidden">
+                            <img src="{{ image | img_url: "master"}}" loading="lazy" alt="">
+                         </div>
+                    {% endunless %}
+                {% endfor %}
+            </div>
+            <div id="w-node-_285cacf6-3817-0ad5-36a6-7fc5f41f2542-cafbf09e" class="product_info u-vflex-stretch-top u-gap-medium">
+              <div class="product_title-price-wrap u-vflex-stretch-top u-gap-medium">
+                <h1 class="u-h2">{{ product.title }}</h1>
+               {% render 'price', product: product %}
+              </div>
+              {{ product.description }}
+
+              {% form 'product', product, class: "product-form u-vflex-stretch-top u-gap-medium" %}
+                
+              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+              {% if product.variants.size > 1 %}
+                {% for option in product.options_with_values %}
+
+                 {% if option.name == 'Color' %}
+                        
+                <fieldset class="variant-opions is--color">
+                  <legend class="margin-bottom margin-small">{{ option.name }}</legend>
+
+                  {% for value in option.values %}
+
+                    {%- assign option_disabled = true %}
+                    
+                        {%- for option1_name in variants_option1_arr %}
+                          {%- case option.position %}
+                            {%- when 1 %}
+                              {%- if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0] %}
+                                {%- assign option_disabled = false %}
+                              {%- endif %}
+                            {%- when 2 %}
+                              {%- if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0] %}
+                                {%- assign option_disabled = false %}
+                              {%- endif %}
+                            {%- when 3 %}
+                              {%- if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0] %}
+                                {%- assign option_disabled = false %}
+                              {%- endif %}
+                          {%- endcase %}
+                        {%- endfor %}
+                    
+                        <div class="variant-color-option {% if option_disabled %}is--disabled{% endif %}"><input type="radio" name="{{ option.name }}" id="{{ option.name | handlize }}-{{ value | handlize }}" class="variant-color-option_input" {% if option.selected_value == value %}
+                            checked {% endif %} value="{{ value }}">
+                            <label for="{{ value.name | handlize }}-{{ value | handlize }}" class="variant-color-option_label">
+                                <div style="background-color: {{ value.swatch.color }}; {% if value.swatch.color == '#FFFFFF' %} border: 1px solid black; {% endif %}" class="variant-color-option_color"></div>
+                            </label></div>
+                    
+                    {% endfor %}
+
+                 
+                </fieldset>
+
+                {% else %} 
+
+                <fieldset class="variant-opions">
+                  <legend class="margin-bottom margin-small">{{ option.name }}</legend>
+
+                  {% for value in option.values %}
+
+                    {%- assign option_disabled = true %}
+                    
+                        {%- for option1_name in variants_option1_arr %}
+                          {%- case option.position %}
+                            {%- when 1 %}
+                              {%- if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0] %}
+                                {%- assign option_disabled = false %}
+                              {%- endif %}
+                            {%- when 2 %}
+                              {%- if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0] %}
+                                {%- assign option_disabled = false %}
+                              {%- endif %}
+                            {%- when 3 %}
+                              {%- if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0] %}
+                                {%- assign option_disabled = false %}
+                              {%- endif %}
+                          {%- endcase %}
+                        {%- endfor %}
+                        
+                        <div class="variant-option {% if option_disabled %}is--disabled{% endif %}"><input type="radio" {% if option.selected_value == value %}
+                            checked
+                        {% endif %} name="{{ option.name }}" id="{{ option.name | handlize }}-{{ value | handlize }}" class="variant-option_input" value="{{ value }}"><label for="{{ value.name | handlize }}-{{ value | handlize }}" class="variant-option_label">{{ value }}</label></div>
+                    
+                    {% endfor %}
+
+                    
+                </fieldset>
+
+                {% endif %}
+
+                    {% endfor %}
+                {% endif %}
+
+                <div class="product-form_buttons u-hflex-left-center u-hflex-nowrap u-gap-tiny margin-top margin-small">
+                  <div class="product-form_atc-button max-width-full u-vflex-stretch-center"><button type="submit" value="Add to cart" aria-label="Add to cart" class="button {% if product.selected_or_first_available_variant.available == false %} is--disabled {% endif %}">
+                      <div class="button_text u-allcaps u-primary-medium">Add to bag</div>
+                      <div class="button_loader u-hflex-center-center hide">
+                        <div class="u-allcaps u-primary-medium">Adding to cart...</div>
+                      </div>
+                    </button></div>
+                </div>
+              {% endform %}
+            </div>
+          </div>
+        </div>
+        
+        <script type="application/json" id="productJsonScript">{{ product | json }}</script>
+        
+        <div class="hide w-embed w-script">{%- liquid
+      if product.selected_or_first_available_variant.featured_media
+        assign seo_media = product.selected_or_first_available_variant.featured_media
+      else
+        assign seo_media = product.featured_media
+      endif
+    -%}
+          
+        </div>
+      </section>
+
+      <script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": {{ product.title | json }},
+        "url": {{ request.origin | append: product.url | json }},
+        {% if seo_media -%}
+          "image": [
+            {{ seo_media | image_url: width: 1920 | prepend: "https:" | json }}
+          ],
+        {%- endif %}
+        "description": {{ product.description | strip_html | json }},
+        {% if product.selected_or_first_available_variant.sku != blank -%}
+          "sku": {{ product.selected_or_first_available_variant.sku | json }},
+        {%- endif %}
+        "brand": {
+          "@type": "Brand",
+          "name": {{ product.vendor | json }}
+        },
+        "offers": [
+          {%- for variant in product.variants -%}
+            {
+              "@type" : "Offer",
+              {%- if variant.sku != blank -%}
+                "sku": {{ variant.sku | json }},
+              {%- endif -%}
+              {%- if variant.barcode.size == 12 -%}
+                "gtin12": {{ variant.barcode }},
+              {%- endif -%}
+              {%- if variant.barcode.size == 13 -%}
+                "gtin13": {{ variant.barcode }},
+              {%- endif -%}
+              {%- if variant.barcode.size == 14 -%}
+                "gtin14": {{ variant.barcode }},
+              {%- endif -%}
+              "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+              "price" : {{ variant.price | divided_by: 100.00 | json }},
+              "priceCurrency" : {{ cart.currency.iso_code | json }},
+              "url" : {{ request.origin | append: variant.url | json }}
+            }{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        ]
+      }
+    </script>

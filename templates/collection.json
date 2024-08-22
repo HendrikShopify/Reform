@@ -1,10 +1,13 @@
 {
   "sections": {
+    "collection-intro": {
+      "type": "collection-intro"
+    },
     "main": {
       "type": "main-collection"
     }
   },
   "order": [
-    "main"
+    "collection-intro", "main"
   ]
 }

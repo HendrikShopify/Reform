@@ -1,0 +1,8 @@
+<div class="price-wrap u-hflex-left-top u-gap-tiny u-hflex-nowrap">
+                        <div id="productPrice" productprice="">{{ product.selected_or_first_available_variant.price | money }}</div>
+                        
+                          <div id="productCompareAtPrice" productcompareatprice="" class="u-strikethrough {% unless product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+hide
+{% endunless %}">{{ product.selected_or_first_available_variant.compare_at_price | money }}</div>
+                        
+                      </div>

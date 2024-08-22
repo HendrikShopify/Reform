@@ -1,0 +1,71 @@
+<section data-theme="inherit" class="section_packages-list">
+    <div class="padding-global">
+      <div class="packages-list_comp">
+      
+      {% for package in section.blocks %}
+
+        <div class="packages_package u-grid-12-col">
+        <div class="package_title-wrap u-hflex-left-top u-gap-xsmall u-hflex-nowrap">
+          <div class="title-index">{{ package.settings.index }}</div>
+          <h2 class="u-h1">{{ package.settings.title }}</h2>
+        </div>
+        <div class="packages_content u-vflex-left-top u-vflex-nowrap u-gap-medium">
+          <div class="max-width-large u-rich-text">
+            {{ package.settings.description }}
+          </div>
+          <a href="{{ package.settings.url }}">
+            <div class="u-allcaps u-primary-medium">{{ package.settings.cta }}</div>
+            <div class="button-link_underscore"></div>
+          </a>
+        </div>
+      </div>
+        
+      {% endfor %}
+
+      
+        
+      </div>
+    </div>
+  </section>
+
+
+  {% schema %}
+    {
+      "name": "Packages list",
+      "settings": [
+        ],
+        "blocks": [
+          {
+            "name": "Package",
+            "type": "Package",
+            "settings": [
+                {
+            "type": "text",
+            "id": "index",
+            "label": "Index"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          },
+            {
+                "type": "text",
+                "id": "cta",
+                "label": "CTA"
+            },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          }
+          ]
+          }
+        ]
+    }
+    {% endschema %}

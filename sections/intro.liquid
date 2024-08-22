@@ -1,0 +1,75 @@
+<script src="{{ 'intro.js' | asset_url }}" defer="defer"></script>
+
+<section data-theme="inherit" class="section_intro">
+        <div class="padding-global padding-section-small">
+          <div class="intro_comp u-vflex-stretch-top u-gap-small">
+            <div class="intro_top u-hflex-between-bottom u-gap-medium u-hflex-nowrap">
+              <div class="max-width-large">
+                <p>{{ section.settings.intro_text }}</p>
+              </div>
+              <div class="intro_menu u-vflex-right-top u-gap-xsmall">
+
+              {% for link in linklists.home-hero-menu.links %}
+                <a href="{{ link.url }}" class="intro_link u-allcaps u-text-align-right">
+                  <div>{{ link.title }}</div>
+                </a>
+              {% endfor %}
+              </div>
+            </div>
+            <div  class="intro_visual overflow-hidden">
+            
+            {% unless section.settings.video %}
+              <img src="{{ section.settings.image | img_url: "master" }}" loading="lazy" alt="{{ section.settings.image }}">
+            {% endunless %}       
+
+            {% if section.settings.video %}
+              <video playsinline loop muted autoplay class="">
+                <source src="{{ section.settings.video.sources[0].url }}" type="video/mp4"/>
+              </video>
+            {% endif %}
+
+           
+            </div>
+            <div class="intro_bottom u-vflex-center-center u-gap-medium">
+              <h1 split-heading class="u-text-align-center u-h2">{{ section.settings.title }}</h1>
+              <p fade-up class="max-width-medium u-text-align-center">{{ section.settings.intro_text_2 }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    
+      {% schema %}
+        {
+        "name": "Intro",
+        "settings": [
+        {
+          "type": "textarea",
+          "id": "intro_text",
+          "default": "At purus blandit cursus morbi diam facilisi tristique. Venenatis iaculis cursus quis nunc iaculis tristique sed. Turpis mattis blandit praesent massa faucibus. Semper massa diam in donec convallis purus. Nunc eget dictumst aliquam bibendum ipsum turpis maecenas neque.",
+          "label": "Top text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "reformer pilates boutique studio",
+          "label": "Title"
+        }, {
+            "type": "textarea",
+            "id": "intro_text_2",
+            "default": "A modern reformer pilates boutique studio in Laren, North-Holland. We offer high-quality reformer pilates lessons for all levels.",
+            "label": "Bottom text"
+        }
+        ]
+        }
+      {% endschema %}

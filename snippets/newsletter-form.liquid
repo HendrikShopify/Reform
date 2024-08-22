@@ -1,21 +1,20 @@
-{% form 'customer', id: 'contact_form' %}
+{% form 'customer', class: 'footer_newsletter' %}
+    
 
-
-<div class="form_newsletter-wrap u-vflex-left-top u-gap-xsmall"><label class="u-allcaps"
-        for="newsletter">Sign up to stay up-to-date</label><input class="form_input" type="text" placeholder="Email"
-        name="contact[email]" id="newsletter">
+    <div class="form_newsletter-wrap u-hflex-left-top u-hflex-nowrap"><input type="text" placeholder="Your e-mail" name="contact[email]" id="newsletter" class="form_input is--newsletter">
     <div class="form_newsletter-submit"><button type="submit">
-            <div class="letter-spacing-005 u-primary-medium u-allcaps">Submit</div>
-        </button></div>
-</div>
+        <div class="form_newsletter-button-text u-h2 u-primary-medium">ok</div>
+      </button></div>
+  </div>
+
 
 {% if form.posted_successfully? %}
-<div class="newsletter_success margin-top margin-xsmall">
-    <div class="u-text-small">You have been subscribed!</div>
-</div>
-{{ form.errors | default_errors }}
-  
-{% endif %}
-{% endform %}
+    <div class="newsletter_success margin-top margin-xsmall">
+      <div class="u-text-small">You have been subscribed!</div>
+    </div>
+  {% endif %}
 
+{{ form.errors | default_errors }}
+
+{% endform %}
 

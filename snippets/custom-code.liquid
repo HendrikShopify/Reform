@@ -3,6 +3,7 @@
       <style>
 /* variables */
 :root {
+	--column-count: 12; 
 	--font-weight--inherit: inherit;
 	--font-weight--100: 100;
 	--font-weight--200: 200;
@@ -159,9 +160,9 @@ margin: 0rem !important;
   padding-left: 0rem !important;
 }
 </style>
-    </div>
-    <div class="page_code_responsive w-embed">
-      <style>
+      </div>
+      <div class="page_code_responsive w-embed">
+        <style>
 /* desktop */
 :root {
 	/* custom */
@@ -234,9 +235,9 @@ margin: 0rem !important;
 	}
 }
 </style>
-    </div>
-    <div class="page_code_custom w-embed">
-      <style>
+      </div>
+      <div class="page_code_custom w-embed">
+        <style>
 .loader {
 	position: absolute;
   aspect-ratio: 2;
@@ -331,10 +332,6 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield; /* Firefox */
 }
-.variant-option input[type=radio]:checked + label {
-background-color: black;
-color: white;
-}
 .tooltip:before {
   content: '';
   position: absolute;
@@ -350,7 +347,7 @@ color: white;
 /*width*/
 [scrollbar]::-webkit-scrollbar {
   width:2px;
-  height:2px;
+  height: 2px;
 }
 /*track*/
 [scrollbar]::-webkit-scrollbar-track {
@@ -360,12 +357,48 @@ background:rgb(255, 255, 255);
 [scrollbar]::-webkit-scrollbar-thumb {
   background:rgb(0, 0, 0);
 }
-
 svg {
-    pointer-events: none;
+	pointer-events: none;
 }
-
-
+.footer.is--home .footer_newsletter {
+	border-bottom: 1px solid white;
+}
+.footer.is--home .form_input::placeholder, .footer.is--home .form_input {
+	color: white;
+}
+</style>
+      </div>
+      <div class="w-embed">
+        <style>
+.variant-option input[type=radio]:checked + label {
+border-bottom: 1px solid black;
+margin-bottom: 0px;
+}
+.variant-color-option input[type=radio]:checked + label {
+border-bottom: 1px solid black;
+margin-bottom: 0px;
+}
+</style>
+      </div>
+    </div>
+    <div class="styleguide_guide_wrap padding-global">
+      <div class="w-embed">
+        <style>
+html:not(.wf-design-mode) .styleguide_guide_wrap {
+	display: none;
+}
+.styleguide_guide_list {
+	counter-reset: gridguides;
+}
+.styleguide_guide_list > div::before {
+  counter-increment: gridguides;
+  content: counter(gridguides);
+}
 </style>
     </div>
   </div>
+
+
+
+        
+      

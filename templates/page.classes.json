@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero"
+    },
+    "classes-list": {
+      "type": "classes-list"
+    },
+    "amenities": {
+      "type": "amenities"
+    }
+  },
+  "order": [
+    "hero", "classes-list", "amenities"
+  ]
+}

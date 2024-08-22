@@ -1,6 +1,9 @@
-document.addEventListener('click', function(event) {
-  if (event.target.closest('.product-card') && event.target.tagName === 'BUTTON') {
-      event.preventDefault();
+document.addEventListener("click", function (event) {
+  if (
+    event.target.closest(".product-card") &&
+    event.target.tagName === "BUTTON"
+  ) {
+    event.preventDefault();
   }
 });
 
@@ -18,10 +21,8 @@ menuButtons.forEach((el) => {
 });
 
 function addLazyLoading() {
-  const lazyLoadImages = document.querySelectorAll(
-    "[lazyLoadWrap]"
-  );
-  
+  const lazyLoadImages = document.querySelectorAll("[lazyLoadWrap]");
+
   lazyLoadImages.forEach((el) => {
     const img = el.querySelector("img");
     let imgLoadTl = gsap.timeline({ paused: true });
@@ -70,111 +71,142 @@ document.addEventListener("click", (event) => {
   }
 });
 
-
 // add product to cart with AJAX
 
 async function addToCart(productId, productQuantity) {
+  let formData = {
+    items: [
+      {
+        id: productId,
+        quantity: productQuantity,
+      },
+    ],
+  };
 
-let formData = {
-  items: [
-    {
-      id: productId,
-      quantity: productQuantity,
-    },
-  ],
-};
+  try {
+    const response = await fetch("/cart/add.js", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-try {
-  const response = await fetch("/cart/add.js", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  });
+    if (!response.ok) {
+      throw new Error(
+        "Failed to add item to cart. Server responded with status: " +
+          response.status
+      );
+    }
 
-  if (!response.ok) {
-    throw new Error(
-      "Failed to add item to cart. Server responded with status: " +
-        response.status
-    );
+    await updateMiniCart();
+    openMiniCart();
+    updateCartCount();
+  } catch (error) {
+    console.error("Error adding item to cart:", error);
   }
-
-  await updateMiniCart();
-  openMiniCart();
-  updateCartCount();
-} catch (error) {
-  console.error("Error adding item to cart:", error);
 }
-
-}
-
 
 // TOOL TIPS
 
 function addToolTips() {
+  const elementsWithTooltip = document.querySelectorAll("[tooltip-content]");
 
-const elementsWithTooltip = document.querySelectorAll("[tooltip-content]");
+  function handleMouseOver(event) {
+    const element = event.target;
+    const tooltipContent = element.getAttribute("tooltip-content");
 
-function handleMouseOver(event) {
-  const element = event.target;
-  const tooltipContent = element.getAttribute("tooltip-content");
+    let tooltip = element._tooltip;
+    if (!tooltip) {
+      tooltip = document.createElement("span");
+      tooltip.className = "tooltip";
+      document.body.appendChild(tooltip);
+      element._tooltip = tooltip;
+    }
 
-  let tooltip = element._tooltip;
-  if (!tooltip) {
-    tooltip = document.createElement("span");
-    tooltip.className = "tooltip";
-    document.body.appendChild(tooltip);
-    element._tooltip = tooltip;
+    const rect = element.getBoundingClientRect();
+    const scrollOffset =
+      window.pageYOffset || document.documentElement.scrollTop;
+    tooltip.textContent = tooltipContent;
+    tooltip.style.visibility = "visible";
+    tooltip.style.top =
+      rect.top + scrollOffset - tooltip.offsetHeight - 8 + "px";
+    tooltip.style.left =
+      rect.left + (element.offsetWidth - tooltip.offsetWidth) / 2 + "px";
   }
 
-  const rect = element.getBoundingClientRect();
-  const scrollOffset = window.pageYOffset || document.documentElement.scrollTop;
-  tooltip.textContent = tooltipContent;
-  tooltip.style.visibility = "visible";
-  tooltip.style.top = rect.top + scrollOffset - tooltip.offsetHeight - 8 + "px";
-  tooltip.style.left = rect.left + (element.offsetWidth - tooltip.offsetWidth) / 2 + "px";
-}
+  function handleMouseOut(event) {
+    const element = event.target;
+    const tooltip = element._tooltip;
 
-function handleMouseOut(event) {
-  const element = event.target;
-  const tooltip = element._tooltip;
-
-  
-  if (tooltip) {
-    tooltip.style.visibility = "hidden";
-    tooltip.parentNode.removeChild(tooltip);
-    element._tooltip = null;
+    if (tooltip) {
+      tooltip.style.visibility = "hidden";
+      tooltip.parentNode.removeChild(tooltip);
+      element._tooltip = null;
+    }
   }
+
+  elementsWithTooltip.forEach(function (element) {
+    element.addEventListener("mouseover", handleMouseOver);
+    element.addEventListener("mouseout", handleMouseOut);
+  });
 }
 
-elementsWithTooltip.forEach(function (element) {
-  element.addEventListener("mouseover", handleMouseOver);
-  element.addEventListener("mouseout", handleMouseOut);
-});
-
-}
-
-if (!('ontouchstart' in window)) {
+if (!("ontouchstart" in window)) {
   addToolTips();
 }
 
-
 // collapsables
-
 
 let accordion = document.querySelectorAll(".accordion");
 
-accordion.forEach(el => {
-
+accordion.forEach((el) => {
   let header = el.querySelector(".accordion-header");
   let content = el.querySelector(".accordion-content");
 
   header.addEventListener("click", () => {
-    if (content.classList.contains('is--active')) {
-      content.classList.remove('is--active');
+    if (content.classList.contains("is--active")) {
+      content.classList.remove("is--active");
     } else {
-      content.classList.add('is--active');
+      content.classList.add("is--active");
     }
-  })
-})
+  });
+});
+
+// words into spans
+
+let style = document.createElement("style");
+style.innerHTML = `
+  .word {
+    display: inline-block;
+    transform-origin: center;
+  }
+`;
+document.head.appendChild(style);
+
+function wrapWordsWithSpans(selector) {
+  const elements = document.querySelectorAll(selector);
+  if (!elements.length) return;
+
+  elements.forEach((element) => {
+    const words = element.innerText.split(" ");
+    element.innerText = "";
+
+    words.forEach((word, index) => {
+      const span = document.createElement("span");
+      span.className = "word";
+      span.innerText = word;
+      element.appendChild(span);
+
+      // Append a space unless it's the last word
+      if (index < words.length - 1) {
+        const space = document.createTextNode(" ");
+        element.appendChild(space);
+      }
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  wrapWordsWithSpans("[split-heading]");
+});
