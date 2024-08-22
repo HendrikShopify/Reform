@@ -2,7 +2,7 @@
         <div class="padding-global padding-section-small">
           <div class="pack_top u-hflex-left-top u-hflex-nowrap">
             <h2 split-heading class="pack_mobile-title u-h1">{{ section.settings.title }}</h2>
-            <div class="pack_image"><img src="{{ section.settings.image_1 | img_url: "master" }}" loading="lazy" alt=""></div>
+            <div img-fade-in class="pack_image overflow-hidden"><img src="{{ section.settings.image_1 | img_url: "master" }}" loading="lazy" alt=""></div>
             <div class="pack_top-content u-vflex-left-top">
               <h2 split-heading class="pack_title u-h1 hide-tablet">{{ section.settings.title }}</h2>
               <div class="pack_content u-vflex-left-top u-gap-xsmall">
@@ -25,9 +25,9 @@
                   <div class="button-link_underscore"></div>
                 </a>
               </div>
-              <div class="pack_image is--mobile"><img src="{{ section.settings.image_2 | img_url: "master" }}" loading="lazy" alt=""></div>
+              <div img-fade-in class="pack_image is--mobile"><img src="{{ section.settings.image_2 | img_url: "master" }}" loading="lazy" alt=""></div>
               <div class="pack_content-bottom u-vflex-right-top u-vflex-nowrap u-gap-xsmall">
-                <h3 split-heading class="pack_subtitle"> {{ section.settings.package_3_title }} </h3>
+                <h3 split-heading right-to-left class="pack_subtitle"> {{ section.settings.package_3_title }} </h3>
                 <p fade-up class="max-width-xlarge u-text-align-right is--pack-paragraph">{{ section.settings.package_3_description }}</p>
                 <a fade-up href="{{ section.settings.package_3_url }}">
                   <div class="u-allcaps u-primary-medium">{{ section.settings.package_3_cta }}</div>
@@ -35,7 +35,7 @@
                 </a>
               </div>
             </div>
-            <div class="pack_image is--desktop"><img src="{{ section.settings.image_2 | img_url: "master" }}" loading="lazy" alt=""></div>
+            <div img-fade-in class="pack_image is--desktop overflow-hidden"><img src="{{ section.settings.image_2 | img_url: "master" }}" loading="lazy" alt=""></div>
           </div>
         </div>
       </section>

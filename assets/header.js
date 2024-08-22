@@ -25,14 +25,14 @@ menuOpen
     {
       clipPath: "inset(0% 0% 0% 0%)",
         duration: 0.35,
-        ease: "power2.out",
+        ease: "power1.out",
     }, "<0.1"
   ).from(menuSocialVisuals, {
     scale: 1.05,
      rotate: 1,
      filter: "blur(1px)",
      stagger: { amount: 0.15, ease: "none", from: "start" },
-     duration: 1,
+     duration: 0.25,
      ease: "power3.out",
    }, "<")
   .from(menuItems, {

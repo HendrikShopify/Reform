@@ -179,12 +179,16 @@ let style = document.createElement("style");
 style.innerHTML = `
   .word {
     display: inline-block;
-    transform-origin: center;
+    transform-origin: right top;
+  }
+
+  .word-right {
+    transform-origin: right top;
   }
 `;
 document.head.appendChild(style);
 
-function wrapWordsWithSpans(selector) {
+function wrapWordsWithSpans(selector, spanClass) {
   const elements = document.querySelectorAll(selector);
   if (!elements.length) return;
 
@@ -194,7 +198,7 @@ function wrapWordsWithSpans(selector) {
 
     words.forEach((word, index) => {
       const span = document.createElement("span");
-      span.className = "word";
+      span.className = `${spanClass}`;
       span.innerText = word;
       element.appendChild(span);
 
@@ -208,5 +212,5 @@ function wrapWordsWithSpans(selector) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  wrapWordsWithSpans("[split-heading]");
+  wrapWordsWithSpans("[split-heading]", "word");
 });

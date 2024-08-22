@@ -1,3 +1,7 @@
+<script src="{{ 'classes.js' | asset_url }}" defer="defer"></script>
+
+
+
 <section data-theme="inherit" class="section_classes">
         <div class="padding-global padding-section-small">
           <div class="classes_comp u-vflex-stretch-top u-gap-small">
@@ -5,7 +9,7 @@
             <div class="classes_grid u-grid-12-col">
               {% for block in section.blocks %}
               <a href="{{ block.settings.link }}" class="classes_class u-vflex-stretch-top u-gap-small">
-                <div class="classes_image-wrap"><img src="{{ block.settings.image | img_url: "master" }}" loading="lazy" alt="{{ block.settings.image }}"></div>
+                <div class="classes_image-wrap overflow-hidden"><img src="{{ block.settings.image | img_url: "master" }}" loading="lazy" alt="{{ block.settings.image }}"></div>
                 <div class="u-h3 u-text-align-center">{{ block.settings.title }}</div>
               </a>
              {% endfor %}

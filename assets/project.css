@@ -3214,6 +3214,7 @@ blockquote {
 
 .classes_class {
   grid-column: span 3;
+  transform-origin: left top;
 }
 
 .classes_image-wrap {
@@ -4350,6 +4351,6 @@ blockquote {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
-.menu_social-item {
+.menu_social-item, .classes_image-wrap {
   overflow: hidden
 }
