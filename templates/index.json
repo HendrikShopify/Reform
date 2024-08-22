@@ -34,10 +34,37 @@
             "title": "Level I",
             "url": "shopify:\/\/pages\/classes"
           }
+        },
+        "class_iXXtzt": {
+          "type": "class",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/woman_doing_pilatus_on_gray_yoga_mat.jpg",
+            "title": "Level II",
+            "url": "shopify:\/\/pages\/classes"
+          }
+        },
+        "class_HbncgQ": {
+          "type": "class",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/weight_machine.jpg",
+            "title": "Level III",
+            "url": "shopify:\/\/pages\/classes"
+          }
+        },
+        "class_dBF8MQ": {
+          "type": "class",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/woman_stretching.jpg",
+            "title": "Pregnant & post preg",
+            "url": "shopify:\/\/pages\/classes"
+          }
         }
       },
       "block_order": [
-        "class_Ufk6Kk"
+        "class_Ufk6Kk",
+        "class_iXXtzt",
+        "class_HbncgQ",
+        "class_dBF8MQ"
       ],
       "settings": {
         "title": "Our classes",
