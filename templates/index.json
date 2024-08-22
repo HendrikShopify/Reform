@@ -20,6 +20,7 @@
       "type": "intro",
       "settings": {
         "intro_text": "At purus blandit cursus morbi diam facilisi tristique. Venenatis iaculis cursus quis nunc iaculis tristique sed. Turpis mattis blandit praesent massa faucibus. Semper massa diam in donec convallis purus. Nunc eget dictumst aliquam bibendum ipsum turpis maecenas neque.",
+        "image": "shopify:\/\/shop_images\/woman_doing_pilatus.jpg",
         "title": "reformer pilates boutique studio",
         "intro_text_2": "A modern reformer pilates boutique studio in Laren, North-Holland. We offer high-quality reformer pilates lessons for all levels."
       }
@@ -70,7 +71,7 @@
         "title": "Our classes",
         "description": "Lorem reform dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere",
         "cta": "View all classes",
-        "global_link": ""
+        "global_link": "shopify:\/\/pages\/classes"
       }
     },
     "pack": {
