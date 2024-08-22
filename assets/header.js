@@ -5,6 +5,7 @@ let menuButton = document.querySelector(".header_left button");
 let menu = document.querySelector(".menu");
 let menuItems = menu.querySelectorAll(".menu_item");
 let menuLinks = menu.querySelectorAll(".menu_item a");
+let menuSocialVisuals = menu.querySelectorAll("img");
 
 let menuOpen = gsap.timeline({ paused: true });
 
@@ -26,7 +27,14 @@ menuOpen
         duration: 0.35,
         ease: "power2.out",
     }, "<0.1"
-  )
+  ).from(menuSocialVisuals, {
+    scale: 1.05,
+     rotate: 1,
+     filter: "blur(1px)",
+     stagger: { amount: 0.15, ease: "none", from: "start" },
+     duration: 1,
+     ease: "power3.out",
+   }, "<")
   .from(menuItems, {
     x: "2.25rem",
     y: "0.75rem",
@@ -36,21 +44,23 @@ menuOpen
     stagger: { amount: 0.25, ease: "none", from: "start" },
     duration: 0.75,
     ease: "power3.out",
-  }, "<");
+  }, "<")
+  
 
 let menuOpenState = false;
 
 function openMenu() {
   document.querySelector("body").style.overflow = "hidden";
-  menuOpen.play();
+  menuOpen.timeScale(1).play();
   menuOpenState = true;
 }
 
 function closeMenu() {
   document.querySelector("body").style.overflow = "auto";
-  menuOpen.reverse();
+  menuOpen.timeScale(1.25).reverse(); 
   menuOpenState = false;
 }
+
 
 menuButton.addEventListener("click", () => {
   if (menuOpenState) {

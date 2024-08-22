@@ -4349,3 +4349,7 @@ blockquote {
 #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecce-cafbf06b, #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecfb-cafbf06b {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
+
+.menu_social-item {
+  overflow: hidden
+}
