@@ -77,6 +77,90 @@
     },
     "amenities": {
       "type": "amenities",
+      "blocks": {
+        "amenity_Mng3Cz": {
+          "type": "amenity",
+          "settings": {
+            "title": "Spacious locker rooms",
+            "description": "Secure lockers available for storing your personal belongings during your workout."
+          }
+        },
+        "amenity_TK8zUH": {
+          "type": "amenity",
+          "settings": {
+            "title": "private showers",
+            "description": "Clean and private showers to freshen up after your Pilates session."
+          }
+        },
+        "amenity_mEXf8j": {
+          "type": "amenity",
+          "settings": {
+            "title": "towel service",
+            "description": "Complimentary towels provided for all members to use during and after workouts."
+          }
+        },
+        "amenity_eKFNbH": {
+          "type": "amenity",
+          "settings": {
+            "title": "changing areas",
+            "description": "Separate changing areas equipped with seating and mirrors for your convenience."
+          }
+        },
+        "amenity_mDPqhm": {
+          "type": "amenity",
+          "settings": {
+            "title": "restrooms",
+            "description": "Well-maintained restrooms located within the facility for your convenience."
+          }
+        },
+        "amenity_zrnNCJ": {
+          "type": "amenity",
+          "settings": {
+            "title": "childcare room",
+            "description": "Safe and engaging childcare options available during your workout sessions."
+          }
+        },
+        "amenity_LRBGd6": {
+          "type": "amenity",
+          "settings": {
+            "title": "water stations",
+            "description": "Hydration stations with filtered water available throughout the studio."
+          }
+        },
+        "amenity_Cj7i6T": {
+          "type": "amenity",
+          "settings": {
+            "title": "coffee bar",
+            "description": "On-site coffee bar offering well deserved coffees and smoothies for after your workout."
+          }
+        },
+        "amenity_crReTm": {
+          "type": "amenity",
+          "settings": {
+            "title": "Wi-Fi Access",
+            "description": "Complimentary high-speed Wi-Fi available throughout the studio."
+          }
+        },
+        "amenity_ywP6Ed": {
+          "type": "amenity",
+          "settings": {
+            "title": "parking",
+            "description": "Convenient on-site parking to ensure a hassle-free visit."
+          }
+        }
+      },
+      "block_order": [
+        "amenity_Mng3Cz",
+        "amenity_TK8zUH",
+        "amenity_mEXf8j",
+        "amenity_eKFNbH",
+        "amenity_mDPqhm",
+        "amenity_zrnNCJ",
+        "amenity_LRBGd6",
+        "amenity_Cj7i6T",
+        "amenity_crReTm",
+        "amenity_ywP6Ed"
+      ],
       "settings": {
         "title": "Reform room  Amenities"
       }
