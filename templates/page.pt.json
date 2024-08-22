@@ -9,13 +9,89 @@
 */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "hero": {
+      "type": "hero",
       "settings": {
+        "title": "Personal training",
+        "content": "Achieve your fitness goals with customized training plans crafted by certified experts, designed to inspire, motivate, and transform your health and wellness journey, ensuring lasting results and a healthier, happier you.",
+        "button_text": "Shop now",
+        "button_url": ""
+      }
+    },
+    "pt": {
+      "type": "personal-training",
+      "blocks": {
+        "option_3gikmW": {
+          "type": "option",
+          "settings": {
+            "title": "First time",
+            "price": "€80",
+            "cta": "Buy here",
+            "url": ""
+          }
+        },
+        "option_XNEymX": {
+          "type": "option",
+          "settings": {
+            "title": "1:1 single class",
+            "price": "€100",
+            "cta": "Buy here",
+            "url": ""
+          }
+        },
+        "option_ecA4FL": {
+          "type": "option",
+          "settings": {
+            "title": "1:1 class x5",
+            "price": "€475",
+            "cta": "Buy here",
+            "url": ""
+          }
+        },
+        "option_pb6mPw": {
+          "type": "option",
+          "settings": {
+            "title": "1:1 class x10",
+            "price": "€900",
+            "cta": "Buy here",
+            "url": ""
+          }
+        },
+        "option_KNUU9e": {
+          "type": "option",
+          "settings": {
+            "title": "1:1 class x20",
+            "price": "€1600",
+            "cta": "Buy here",
+            "url": ""
+          }
+        },
+        "option_kTNUiX": {
+          "type": "option",
+          "settings": {
+            "title": "1:1 class x40",
+            "price": "€2800",
+            "cta": "Buy here",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "option_3gikmW",
+        "option_XNEymX",
+        "option_ecA4FL",
+        "option_pb6mPw",
+        "option_KNUU9e",
+        "option_kTNUiX"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/woman_stretching.jpg",
+        "description": "At purus blandit cursus morbi diam facilisi tristique. Venenatis iaculis cursus quis nunc iaculis tristique sed. Turpis mattis blandit praesent massa faucibus. Semper massa diam in donec convallis purus. Nunc eget dictumst aliquam bibendum ipsum turpis maecenas neque."
       }
     }
   },
   "order": [
-    "main"
+    "hero",
+    "pt"
   ]
 }
