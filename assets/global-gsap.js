@@ -86,7 +86,7 @@ fadeUp.forEach((el) => {
   });
 
   tl.from(el, {
-    y: "2.25rem",
+    y: "50%",
     rotate: 1,
     filter: "blur(2px)",
     opacity: 0,
@@ -106,15 +106,64 @@ imagesFadeIn.forEach((el) => {
     scrollTrigger: {
       trigger: el,
       markers: false,
-      start: "top 80%",
+      start: "top bottom",
     },
   });
 
-  tl.from(image, {
-    scale: 1.15,
-    filter: "blur(1px)",
-    duration: 1.25,
+  tl.fromTo(el, {
+    clipPath: "polygon(5% 5%, 95% 5%, 95% 95%, 5% 95%)",
+  }, {
+    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+    stagger: { amount: 0.2, ease: "power1.out", from: "start" },
+    duration: 1,
+    ease: "power1.out",
+  }).from(image, {
+    scale: 1.1,
+    filter: "blur(2px)",
+    stagger: { amount: 0.2, ease: "power1.out", from: "start" },
+    duration: 2.25,
     ease: "power3.out",
-  });
+  }, "<");
 
 })
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.from("body", {
+    filter: "blur(1px)",
+    duration: .5,
+    ease: "power3.out",
+  })
+  gsap.to(".preloader", {
+    duration: 0.5,
+    opacity: 0,
+    ease: "power3.out",
+    onComplete: () => {
+      document.querySelector(".preloader").style.display = "none";
+    },
+  })
+})
+
+
+let productCards = document.querySelectorAll(".product-card");
+
+productCards.forEach((el) => {
+
+  let image = el.querySelector("img");
+
+  el.addEventListener("mouseover", () => {
+    gsap.to(image, {
+      scale: 1.05,
+      duration: 0.5,
+      ease: "power3.out",
+    })
+  })
+
+  el.addEventListener("mouseleave", () => {
+    gsap.to(image, {
+      scale: 1,
+      duration: 0.5,
+      ease: "power3.out",
+    })
+  })
+
+});

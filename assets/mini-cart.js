@@ -19,12 +19,12 @@ function addMiniCartAnimation() {
   miniCartAnimation
   .from(miniCartDrawer, {
     x: "100%",
-    duration: 0.35,
-    ease: "power1.inOut"
+    duration: 0.5,
+    ease: "power3.out"
   }, "<").from(miniCartBackground, {
     backgroundColor: "rgba(0, 0, 0, 0)",
-    duration: 0.35,
-    ease: "power1.inOut"
+    duration: 0.5,
+    ease: "power3.out"
   }, "<")
 }
 

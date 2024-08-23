@@ -6,8 +6,7 @@ let classesTl = gsap.timeline({
     trigger: ".classes_grid",
     markers: false,
     scrub: false,
-    start: "top bottom",
-    end: "top 20%",
+    start: "top 70%"
   },
 });
 

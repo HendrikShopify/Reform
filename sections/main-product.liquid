@@ -20,12 +20,12 @@ assign variants_option3_arr = product.variants | map: 'option3'
 <section data-theme="inherit" class="section_product">
         <div class="padding-global padding-section-huge">
           <div class="product_comp u-hflex-left-top u-hflex-nowrap">
-            <div class="product_image overflow-hidden is--featured"><img src="{{ product.featured_image | img_url: "master" }}" loading="lazy" alt="{{ product.featured_image }}"></div>
+            <div img-fade-in class="product_image overflow-hidden is--featured"><img src="{{ product.featured_image | img_url: "master" }}" loading="lazy" alt="{{ product.featured_image }}"></div>
             <div class="product_images u-vflex-stretch-top u-gap-medium">
-                <div class="product_image overflow-hidden is--featured-mobile"><img src="{{ product.featured_image | img_url: "master" }}" loading="lazy" alt="{{ product.featured_image }}"></div>
+                <div img-fade-in class="product_image overflow-hidden is--featured-mobile"><img src="{{ product.featured_image | img_url: "master" }}" loading="lazy" alt="{{ product.featured_image }}"></div>
                 {% for image in product.images %}
                     {% unless forloop.first %}
-                        <div class="product_image overflow-hidden">
+                        <div img-fade-in class="product_image overflow-hidden">
                             <img src="{{ image | img_url: "master"}}" loading="lazy" alt="">
                          </div>
                     {% endunless %}
@@ -33,11 +33,12 @@ assign variants_option3_arr = product.variants | map: 'option3'
             </div>
             <div id="w-node-_285cacf6-3817-0ad5-36a6-7fc5f41f2542-cafbf09e" class="product_info u-vflex-stretch-top u-gap-medium">
               <div class="product_title-price-wrap u-vflex-stretch-top u-gap-medium">
-                <h1 class="u-h2">{{ product.title }}</h1>
-               {% render 'price', product: product %}
+                <h1 split-heading class="u-h2">{{ product.title }}</h1>
+               <div >{% render 'price', product: product %}</div>
               </div>
+              
               {{ product.description }}
-
+                
               {% form 'product', product, class: "product-form u-vflex-stretch-top u-gap-medium" %}
                 
               <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
