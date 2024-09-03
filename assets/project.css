@@ -3031,7 +3031,7 @@ blockquote {
 .preloader {
   z-index: 9999;
   background-color: var(--neutrals--neutral-100);
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0%;
 }
