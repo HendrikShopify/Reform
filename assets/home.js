@@ -1,43 +1,47 @@
+let mm = gsap.matchMedia();
+
 let heroLogo = document.querySelector(".hero_logo");
 let headerLogoWrap = document.querySelector(".header_logo-inner-wrap");
-let heroLogoWrap = document.querySelector(".hero_logo-wrap");
 
 function heroLogoAnimation(element) {
   let state = Flip.getState(heroLogo, { props: "all" });
-
   element.appendChild(heroLogo);
 
-  Flip.from(state, {
+  let combinedTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".page_main",
+      start: "top top",
+      end: "685",
+      scrub: 0.5,
+    }
+  });
+
+  combinedTimeline.add(Flip.from(state, {
     scale: true,
+    force3D: false,
     duration: 1,
-    ease: "power3.inOut",
-    scrub: true,
+    ease: "none",
+  }));
+
+  combinedTimeline.to(".header", {
+    marginTop: 0,
+    duration: 1,
+    ease: "none",
+  }, 0);
+
+  // Add the button animation conditionally using matchMedia
+  mm.add("(min-width: 480px)", () => {
+    // Animation for the button only runs on screens wider than 479px
+    combinedTimeline.from(".header_left button", {
+      opacity: 0,
+      duration: 0.5,
+      ease: "none",
+    }, 0.5);
   });
 }
 
-let headerAnimation = gsap.timeline({ paused: true });
+window.scrollTo(0, 0);
 
-headerAnimation
-  .to(".header", {
-    marginTop: 0,
-    duration: 1,
-    ease: "power3.inOut",
-  })
-  .from(".header_left button", {
-    opacity: 0,
-  }, "0.5");
-
-ScrollTrigger.create({
-  trigger: ".page_main",
-  start: "top top",
-  end: "520",
-  onLeaveBack: () => {
-    heroLogoAnimation(heroLogoWrap);
-    headerAnimation.reverse();
-  },
-  onEnter: () => {
-    heroLogoAnimation(headerLogoWrap);
-    headerAnimation.play();
-  },
-});
-
+setTimeout(() => {
+  heroLogoAnimation(headerLogoWrap);
+}, 100);

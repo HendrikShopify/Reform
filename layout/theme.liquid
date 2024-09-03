@@ -25,6 +25,14 @@
     {{ 'webflow.css' | asset_url | stylesheet_tag }}
     {{ 'project.css' | asset_url | stylesheet_tag }}
 
+    <style>
+
+.preloader {
+  display: "flex"!important;
+}
+
+      </style>
+
     <script src="{{ 'gsap.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'ScrollTrigger.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'Flip.min.js' | asset_url }}" defer="defer"></script>

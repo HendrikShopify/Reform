@@ -35,16 +35,7 @@ menuOpen
      duration: 0.25,
      ease: "power3.out",
    }, "<")
-  .from(menuItems, {
-    x: "2.25rem",
-    y: "0.75rem",
-    filter: "blur(1px)",
-    rotate: 3,
-    opacity: 0,
-    stagger: { amount: 0.25, ease: "none", from: "start" },
-    duration: 0.75,
-    ease: "power3.out",
-  }, "<")
+  
   
 
 let menuOpenState = false;
@@ -90,3 +81,4 @@ menuLinks.forEach((item) => {
         })
     });
 });
+

@@ -6,14 +6,14 @@
                 <div class="line-item_content max-width-full u-vflex-stretch-between u-gap-medium">
                   <div class="u-vflex-stretch-between u-gap-xtiny">
                     <div class="u-vflex-stretch-between u-gap-tiny">
-                      <div class="u-primary-medium u-allcaps">{{ item.product.title }}</div>
+                      <div class="u-primary-medium u-allcaps is--line-item-title">{{ item.product.title }}</div>
                       {% render 'price', product: item.product %}
                       <div>{{ item.variant.title }}</div>
                     </div>
                   </div>
                   <div class="u-hflex-left-center u-gap-tiny line-item-delete">
                     <div class="u-cursor-pointer">
-                      <div button-action="deleteItem" class="u-allcaps u-primary-medium">Remove item</div>
+                      <div button-action="deleteItem" class="u-allcaps u-primary-medium">Remove</div>
                       <div class="button-link_underscore"></div>
                     </div>
                   </div>

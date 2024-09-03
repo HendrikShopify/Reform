@@ -1,47 +1,35 @@
-let heroLinks = document.querySelectorAll(".intro_menu a, .footer_menu a");
+let heroLinks = document.querySelectorAll(".intro_menu a");
 
 heroLinks.forEach((el) => {
   el.addEventListener("mouseover", () => {
-    el.classList.add("u-primary-medium");
+    gsap.to(el, { duration: 0.3, color: "#FFB342" });
   });
 
   el.addEventListener("mouseleave", () => {
-    el.classList.remove("u-primary-medium");
+    gsap.to(el, { duration: 0.3, color: "#000" });
   });
 });
 
-let images = document.querySelectorAll("[animate-image-in]");
 
-images.forEach((el) => {
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: el,
-      scrub: false,
-    },
+
+function createButtonAnimations() {
+  let buttonUnderscores = document.querySelectorAll(".button-link_underscore");
+
+  buttonUnderscores.forEach((el) => {
+    let button = el.parentElement;
+  
+    button.addEventListener("mouseover", () => {
+      gsap.to(el, { duration: 0.3, width: "20%" });
+    });
+  
+    button.addEventListener("mouseleave", () => {
+      gsap.to(el, { duration: 0.3, width: "100%" });
+    });
   });
+}
 
-  tl.from(el, {
-    duration: 1,
-    scale: 1.1,
-    rotate: -2,
-    transform: "blur(2px)",
-    ease: "power1.out",
-  });
-});
+createButtonAnimations();
 
-let buttonUnderscores = document.querySelectorAll(".button-link_underscore");
-
-buttonUnderscores.forEach((el) => {
-  let button = el.parentElement;
-
-  button.addEventListener("mouseover", () => {
-    gsap.to(el, { duration: 0.3, width: "20%" });
-  });
-
-  button.addEventListener("mouseleave", () => {
-    gsap.to(el, { duration: 0.3, width: "100%" });
-  });
-});
 
 let splittedHeadings = document.querySelectorAll("[split-heading]");
 
@@ -53,17 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: el,
         markers: false,
-        start: "top 80%",
+        start: "top 95%",
       },
     });
 
-    // Check if the element has the attribute 'right-to-left'
     let isRightToLeft = el.hasAttribute("right-to-left");
 
     tl.from(words, {
       y: "2.25rem",
-      x: isRightToLeft ? "-0.75rem" : "0.75rem", 
-      rotate: isRightToLeft ? -3 : 3, 
       filter: "blur(2px)",
       opacity: 0,
       stagger: { each: 0.1, ease: "none", from: isRightToLeft ? "end" : "start" },
@@ -86,7 +71,7 @@ fadeUp.forEach((el) => {
   });
 
   tl.from(el, {
-    y: "50%",
+    y: "5rem",
     rotate: 1,
     filter: "blur(2px)",
     opacity: 0,
@@ -110,15 +95,8 @@ imagesFadeIn.forEach((el) => {
     },
   });
 
-  tl.fromTo(el, {
-    clipPath: "polygon(5% 5%, 95% 5%, 95% 95%, 5% 95%)",
-  }, {
-    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-    stagger: { amount: 0.2, ease: "power1.out", from: "start" },
-    duration: 1,
-    ease: "power1.out",
-  }).from(image, {
-    scale: 1.1,
+  tl.from(image, {
+    scale: 1.05,
     filter: "blur(2px)",
     stagger: { amount: 0.2, ease: "power1.out", from: "start" },
     duration: 2.25,
@@ -128,15 +106,12 @@ imagesFadeIn.forEach((el) => {
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-  gsap.from("body", {
-    filter: "blur(1px)",
-    duration: .5,
-    ease: "power3.out",
-  })
+  
   gsap.to(".preloader", {
     duration: 0.5,
     opacity: 0,
     ease: "power3.out",
+    delay: 0.1,
     onComplete: () => {
       document.querySelector(".preloader").style.display = "none";
     },
@@ -144,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
-let productCards = document.querySelectorAll(".product-card");
+let productCards = document.querySelectorAll(".product-card .product-card_top");
 
 productCards.forEach((el) => {
 
@@ -152,7 +127,7 @@ productCards.forEach((el) => {
 
   el.addEventListener("mouseover", () => {
     gsap.to(image, {
-      scale: 1.05,
+      scale: 1.0175,
       duration: 0.5,
       ease: "power3.out",
     })

@@ -1,3 +1,11 @@
+<style>
+
+.is--header {
+  z-index: 3;
+}
+
+  </style>
+
 
 {% comment %} 4.63rem {% endcomment %}
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
@@ -9,7 +17,7 @@
 <header class="header header  {% if template.name == 'index' %}
   is--home
 {% endif %}">
-      <div class="padding-global max-width-full z-index-2">
+      <div class="padding-global max-width-full z-index-2 is--header">
         <div class="header_grid u-grid-12-col">
           <div id="w-node-_223ff329-c576-0e93-44a9-7b8af92f9a81-02e95be1" class="header_left"><button class="u-allcaps u-primary-medium">
               <div>menu</div>
@@ -80,7 +88,7 @@
             {% for link in linklists.main-menu.links %}
               <li class="menu_item {% if link.url == request.path %}is--current{% endif %}">
                 <a href="{{ link.url }}" class="w-inline-block">
-                  <div class="u-h3 {% if link.url == request.path %}u-primary-medium{% endif %}">{{ link.title }}</div>
+                  <div class="u-h3 {% if link.url == request.path %}u-text-color-orange{% endif %}">{{ link.title }}</div>
                 </a>
               </li>
             {% endfor %}
@@ -90,12 +98,12 @@
               <div class="u-h3">Follow us</div>
             </div>
             <div class="menu_social-grid">
-              <div id="w-node-_9af31d92-2b5a-8229-b36e-9d823d7def80-02e95be1" class="menu_social-item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
-              <div id="w-node-_73b3c31d-6144-67a9-f4b4-f69752a35d19-02e95be1" class="menu_social-item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
-              <div id="w-node-cee9dc87-fdd9-76f9-d215-2d34832384a6-02e95be1" class="menu_social-item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
-              <div id="w-node-e90c2775-6fdb-0364-92fc-d11f0863f6fb-02e95be1" class="menu_social-item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
-              <div id="w-node-_8272a547-992d-fb90-28bb-ce4895c5efd8-02e95be1" class="menu_social-item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
-              <div id="w-node-f5121307-3c84-c215-a996-2f1446862217-02e95be1" class="menu_social-item"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+              <div id="w-node-_9af31d92-2b5a-8229-b36e-9d823d7def80-02e95be1" class="menu_social-item overflow-hidden"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+              <div id="w-node-_73b3c31d-6144-67a9-f4b4-f69752a35d19-02e95be1" class="menu_social-item overflow-hidden "><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+              <div id="w-node-cee9dc87-fdd9-76f9-d215-2d34832384a6-02e95be1" class="menu_social-item overflow-hidden"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+              <div id="w-node-e90c2775-6fdb-0364-92fc-d11f0863f6fb-02e95be1" class="menu_social-item overflow-hidden"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+              <div id="w-node-_8272a547-992d-fb90-28bb-ce4895c5efd8-02e95be1" class="menu_social-item overflow-hidden"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+              <div id="w-node-f5121307-3c84-c215-a996-2f1446862217-02e95be1" class="menu_social-item overflow-hidden"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
             </div>
           </div>
           <div class="menu_footer">

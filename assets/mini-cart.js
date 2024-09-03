@@ -104,6 +104,7 @@ async function updateMiniCart() {
     miniCart.innerHTML = newMiniCartContent;
     addMiniCartAnimation();
     addLazyLoading();
+    createButtonAnimations();
     if(miniCartOpenState === true) {
       miniCartAnimation.progress(1);
     } else {

@@ -12,7 +12,7 @@
                     <div class="classes-list_index u-h4">{{ class.settings.index }}</div>
                   {% endif %}
                 </div>
-                <div img-fade-in class="classes-list_image"><img src="{{ class.settings.image | img_url: "master" }}" loading="lazy" alt="{{ class.settings.image }}"></div>
+                <div img-fade-in class="classes-list_image overflow-hidden"><img src="{{ class.settings.image | img_url: "master" }}" loading="lazy" alt="{{ class.settings.image }}"></div>
                 <div class="classes-list_content u-vflex-left-top u-gap-small">
                   <p fade-up class="max-width-large">{{ class.settings.description }}</p>
                   <a fade-up  href{{ class.settings.url }}>
