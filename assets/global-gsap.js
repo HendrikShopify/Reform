@@ -72,7 +72,6 @@ fadeUp.forEach((el) => {
 
   tl.from(el, {
     y: "5rem",
-    rotate: 1,
     filter: "blur(2px)",
     opacity: 0,
     duration: 1.25,
