@@ -64,14 +64,22 @@
             
           
           <div class="header_utlity-links u-hflex-right-top u-gap-medium u-hflex-nowrap">
-            <div class="header_booknow">
+          
+          {% if template.name == 'index' %}  
+
+          <div class="header_booknow">
               <a href="{{ section.settings.book_now_link }}" class="u-allcaps u-primary-medium">
                 <div>Book now</div>
               </a>
-            </div><button id="cartButton" class="u-allcaps">
+            </div>
+          {% endif %}
+            <button id="cartButton" class="u-allcaps">
               <div>Bag <span class="cart-quanity">{{ cart.item_count }}</span></div>
             </button>
           </div>
+
+          
+
         </div>
       </div>
 
