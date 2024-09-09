@@ -13,7 +13,8 @@
       "type": "home-hero",
       "settings": {
         "address_1": "Insert address here",
-        "address_2": "Laren"
+        "address_2": "Laren",
+        "link": ""
       }
     },
     "intro": {
@@ -98,7 +99,7 @@
       "type": "shop",
       "settings": {
         "image": "shopify:\/\/shop_images\/a_gym_bag_with_a_pair_of_sport_shoes_next_to_it.jpg",
-        "title": "Shop our reformer items",
+        "title": "Shop our <br> reformer <br> items",
         "cta": "Go to shop",
         "url": "shopify:\/\/collections\/shop"
       }
