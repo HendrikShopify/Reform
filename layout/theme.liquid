@@ -42,7 +42,9 @@
     
   </head>
 
-  <body tr-scrollflip-element="component" class="template-{{ template | split: '.' | first }}">
+  <body tr-scrollflip-element="component" class="template-{{ template | split: '.' | first }}  {% unless template.name == 'index' %}
+        final-state
+      {% endunless %}">
 
     {% render 'custom-code' %}
     {% sections 'header-group' %}

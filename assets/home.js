@@ -15,22 +15,30 @@ function heroLogoAnimation(element) {
       end: "460",
       scrub: 0.5,
       onEnter: () => {
-        // Add the 'final-state' class when the ScrollTrigger enters
-        document.body.classList.remove('final-state');
+        if (document.querySelector('.section_hero')) {
+          // Add the 'final-state' class when the ScrollTrigger enters
+          document.body.classList.remove('final-state');
+        }
       },
       onLeave: () => {
-        // Remove the 'final-state' class when the ScrollTrigger leaves
-        document.body.classList.add('final-state');
-        console.log("left");
+        if (document.querySelector('.section_hero')) {
+          // Remove the 'final-state' class when the ScrollTrigger leaves
+          document.body.classList.add('final-state');
+          console.log("left");
+        }
       },
       onLeaveBack: () => {
-        // Remove the 'final-state' class when scrolling back up
-        document.body.classList.remove('final-state');
+        if (document.querySelector('.section_hero')) {
+          // Remove the 'final-state' class when scrolling back up
+          document.body.classList.remove('final-state');
+        }
       },
       onUpdate: (self) => {
-        // Check the progress; if less than 1 (not fully complete), remove the class
-        if (self.progress < 1) {
-          document.body.classList.remove('final-state');
+        if (document.querySelector('.section_hero')) {
+          // Check the progress; if less than 1 (not fully complete), remove the class
+          if (self.progress < 1) {
+            document.body.classList.remove('final-state');
+          }
         }
       },
     }
