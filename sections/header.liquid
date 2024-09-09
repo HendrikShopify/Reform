@@ -96,7 +96,7 @@
             {% for link in linklists.main-menu.links %}
               <li class="menu_item {% if link.url == request.path %}is--current{% endif %}">
                 <a href="{{ link.url }}" class="w-inline-block">
-                  <div class="u-h3 {% if link.url == request.path %}u-text-color-orange{% endif %}">{{ link.title }}</div>
+                  <div class="u-h3">{{ link.title }}</div>
                 </a>
               </li>
             {% endfor %}
