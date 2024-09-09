@@ -41,17 +41,42 @@ menuOpen
 let menuOpenState = false;
 
 function openMenu() {
-  document.querySelector("body").style.overflow = "hidden";
+  if (menuOpenState) return; // Prevent opening if already open
+  
+  const body = document.querySelector("body");
+
+  // Check if body has the class 'final-state'
+  if (!body.classList.contains('final-state')) {
+    // Scroll down 460 pixels
+    window.scrollTo({
+      top: 450,
+      behavior: 'smooth' // Smooth scroll down
+    });
+  }
+
+  body.style.overflow = "hidden";
   menuOpen.timeScale(1).play();
   menuOpenState = true;
 }
 
 function closeMenu() {
-  document.querySelector("body").style.overflow = "auto";
+  if (!menuOpenState) return; // Prevent closing if already closed
+  
+  const body = document.querySelector("body");
+  
+  // Check if body has the class 'final-state'
+  if (!body.classList.contains('final-state')) {
+    // Scroll back to the top of the page only if 'final-state' class does not exist
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Smooth scroll up
+    });
+  }
+
+  body.style.overflow = "auto";
   menuOpen.timeScale(1.25).reverse(); 
   menuOpenState = false;
 }
-
 
 menuButton.addEventListener("click", () => {
   if (menuOpenState) {
@@ -62,23 +87,3 @@ menuButton.addEventListener("click", () => {
     menuButton.innerHTML = "Close";
   }
 });
-
-menuLinks.forEach((item) => {
-    item.addEventListener("mouseover", () => {
-        
-        gsap.to(item, {
-            paddingLeft: "1rem",
-            duration: 0.25,
-            ease: "power1.inOut",
-        })
-        
-    });
-    item.addEventListener("mouseleave", () => {
-        gsap.to(item, {
-            paddingLeft: "0rem",
-            duration: 0.25,
-            ease: "power1.out",
-        })
-    });
-});
-

@@ -1,17 +1,17 @@
 <section data-theme="inherit" class="section_shop">
         <div class="padding-global padding-section-large">
           <div class="shop_comp u-hflex-between-top u-hflex-nowrap u-gap-medium">
-            <div class="shop_content u-vflex-left-top u-gap-xsmall">
-              <h2 split-heading class="u-h1 max-width-medium">{{ section.settings.title }}</h2>
+            <div fade-up class="shop_content u-vflex-left-top u-gap-xsmall">
+              <h2  class="u-h1 max-width-medium">{{ section.settings.title }}</h2>
               <div class="hide-tablet">
-                <a fade-up href="{{ section.settings.url }}">
+                <a  href="{{ section.settings.url }}">
                   <div class="u-allcaps u-primary-medium">{{ section.settings.cta }}</div>
                   <div class="button-link_underscore"></div>
                 </a>
               </div>
             </div>
             <div img-fade-in class="shop_image overflow-hidden"><img src="{{ section.settings.image | img_url: "master" }}" loading="lazy" alt="{{ section.settings.image }}"></div>
-            <div fade-up class="shop_mobile-button">
+            <div class="shop_mobile-button">
               <a href="{{ section.settings.url }}">
                 <div class="u-allcaps u-primary-medium">{{ section.settings.cta }}</div>
                 <div class="button-link_underscore"></div>

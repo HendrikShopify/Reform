@@ -1,16 +1,16 @@
 <section data-theme="inherit" class="section_pt">
         <div class="padding-global">
           <div class="pt_comp u-hflex-left-top">
-            <div img-fade-in class="pt_visual"><img src="{{ section.settings.image | img_url: "master" }}" loading="lazy" alt="{{ section.settings.image }}"></div>
+            <div img-fade-in class="pt_visual overflow-hidden"><img src="{{ section.settings.image | img_url: "master" }}" loading="lazy" alt="{{ section.settings.image }}"></div>
             <div class="pt_content">
               <div class="pt_grid">
 
             {% for option in section.blocks %}
                 
-                <div  class="pt_item u-vflex-left-top u-gap-small">
-                  <div split-heading class="u-h3">{{ option.settings.title }}</div>
-                  <div fade-up>{{ option.settings.price }}</div>
-                  <a fade-up>
+                <div fade-up class="pt_item u-vflex-left-top u-gap-small">
+                  <div class="u-h3">{{ option.settings.title }}</div>
+                  <div>{{ option.settings.price }}</div>
+                  <a href="{{ option.settings.url }}">
                     <div class="u-allcaps u-primary-medium">{{ option.settings.cta }}</div>
                     <div class="button-link_underscore"></div>
                   </a>

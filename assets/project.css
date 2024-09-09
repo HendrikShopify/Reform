@@ -98,8 +98,10 @@
   --brand--secondary-100: #545c55;
   --neutrals--neutral-200: #838383;
   --neutrals--neutral-200\<deleted\|variable-d7da75fd-3d2b-28aa-e144-b869d297b399\>: #cfd2c6;
-  --text--font-weight: var(--font--primary-regular);
-  --text--text-transform: var(--text-transform--none);
+  --text-medium: 0px;
+  --padding-vertical--none: var(--size--0rem);
+  --padding-vertical--small: var(--size--5rem);
+  --svg-stroke-width--main: 1px;
   --display--font-weight: var(--font--primary-medium);
   --display--text-transform: var(--text-transform--inherit);
   --h1--font-weight: var(--font--primary-regular);
@@ -114,9 +116,24 @@
   --h5--text-transform: var(--text-transform--inherit);
   --h6--font-weight: var(--font--primary-medium);
   --h6--text-transform: var(--text-transform--inherit);
+  --text--font-weight: var(--font--primary-regular);
+  --text--text-transform: var(--text-transform--none);
+  --text-large--font-weight: var(--font--primary-regular);
+  --text-large--text-transform: var(--text-transform--inherit);
+  --text-medium--font-weight: var(--font--primary-regular);
+  --text-medium--line-height: var(--line-height--1-5em);
+  --text-medium--text-transform: var(--font-weight--inherit);
+  --text-small--font-weight: var(--font--primary-regular);
+  --text-small--text-transform: var(--text-transform--inherit);
+  --text-tiny--font-weight: var(--font--primary-regular);
+  --text-tiny--line-height: var(--line-height--1em);
+  --text-tiny--text-transform: var(--text-transform--inherit);
   --font--primary-family: "Gotham Book", sans-serif;
   --font--primary-regular: var(--font-weight--400);
   --font--primary-medium: var(--font-weight--500);
+  --font--primary-bold: var(--font-weight--700);
+  --font--secondary-family: Gotham, sans-serif;
+  --font--tertiary-family: Plantin, sans-serif;
   --font-weight--inherit: 0px;
   --font-weight--200: 0px;
   --font-weight--300: 0px;
@@ -131,19 +148,6 @@
   --line-height--1-5em: 1.5em;
   --line-height--1-4em: 1.4em;
   --line-height--1-2em: 1.2em;
-  --text-transform--inherit: 0px;
-  --text-transform--none: 0px;
-  --text-transform--uppercase: 0px;
-  --text-transform--capitalize: 0px;
-  --text-transform--lowercase: 0px;
-  --font--primary-bold: var(--font-weight--700);
-  --svg-stroke-width--main: 1px;
-  --text-large--font-weight: var(--font--primary-regular);
-  --text-large--text-transform: var(--text-transform--inherit);
-  --text-small--font-weight: var(--font--primary-regular);
-  --text-small--text-transform: var(--text-transform--inherit);
-  --padding-vertical--none: var(--size--0rem);
-  --padding-vertical--small: var(--size--5rem);
   --size--3-5rem: 3.5rem;
   --size--4rem: 4rem;
   --size--4-5rem: 4.5rem;
@@ -163,18 +167,14 @@
   --size--14rem: 14rem;
   --size--15rem: 15rem;
   --size--16rem: 16rem;
-  --text-medium: 0px;
-  --text-medium--font-weight: var(--font--primary-regular);
-  --text-medium--line-height: var(--line-height--1-5em);
-  --text-medium--text-transform: var(--font-weight--inherit);
-  --text-tiny--font-weight: var(--font--primary-regular);
-  --text-tiny--line-height: var(--line-height--1em);
-  --text-tiny--text-transform: var(--text-transform--inherit);
-  --font--secondary-family: Gotham, sans-serif;
-  --font--tertiary-family: Plantin, sans-serif;
   --size--0-8rem: .8rem;
   --size--1-75rem: 1.75rem;
   --size--0-625rem: .625rem;
+  --text-transform--inherit: 0px;
+  --text-transform--none: 0px;
+  --text-transform--uppercase: 0px;
+  --text-transform--capitalize: 0px;
+  --text-transform--lowercase: 0px;
   --swatch--dark\<deleted\|variable-b6de3dc8-5520-0236-77cd-d665fd586e64\>: #353233;
 }
 
@@ -3546,10 +3546,11 @@ blockquote {
 }
 
 .menu_item {
+  transition: color .2s;
   overflow: hidden;
 }
 
-.menu_item.is--current {
+.menu_item:hover {
   color: var(--brand--primary-100);
 }
 
@@ -3973,6 +3974,10 @@ blockquote {
     padding-top: 3.75rem;
   }
 
+  .padding-global.padding-section-huge.is--classes {
+    padding-bottom: 6.25rem;
+  }
+
   .padding-section-small {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -4099,8 +4104,23 @@ blockquote {
     display: none;
   }
 
+  .intro_visual {
+    aspect-ratio: 3.7 / 4.2;
+  }
+
+  .intro_bottom.u-vflex-center-center.u-gap-medium {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+
   .pack_image.is--mobile {
     display: block;
+  }
+
+  .pack_content-middle.u-vflex-left-top.u-gap-xsmall {
+    text-align: right;
+    justify-content: flex-start;
+    align-items: flex-end;
   }
 
   .footer_social.u-hflex-between-top.u-hflex-nowrap.u-gap-small {
@@ -4217,6 +4237,10 @@ blockquote {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  .menu_item.is--current {
+    color: var(--brand--primary-100);
+  }
+
   .inta_title.u-h1.u-text-align-right {
     order: -1;
   }
@@ -4252,6 +4276,10 @@ blockquote {
 
   .hero_logo-wrap {
     height: 10rem;
+  }
+
+  .body-2 {
+    font-size: .69rem;
   }
 }
 
@@ -4385,16 +4413,28 @@ blockquote {
   .header_logo-inner-wrap.u-hflex-center-top {
     width: 50vw;
     max-width: 8.75rem;
+    position: absolute;
   }
 
   .header_left {
     grid-column: span 3;
+    position: relative;
   }
 
   .header_grid.u-grid-12-col {
     justify-content: space-between;
     margin-top: 1.69rem;
     display: flex;
+    position: relative;
+  }
+
+  .classes_grid.u-grid-12-col {
+    grid-column-gap: var(--grid-gap--main);
+    grid-row-gap: var(--grid-gap--main);
+    grid-template-rows: auto;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-columns: minmax(0, 1fr);
+    display: grid;
   }
 
   .shop_image {
@@ -4402,7 +4442,7 @@ blockquote {
   }
 
   .shop_comp.u-hflex-between-top.u-hflex-nowrap.u-gap-medium {
-    padding-bottom: 3.13rem;
+    padding-bottom: 3rem;
   }
 
   .insta_comp, .footer_newsletter {
@@ -4416,6 +4456,7 @@ blockquote {
   }
 
   .classes-list_grid {
+    grid-row-gap: 4rem;
     grid-template-columns: 1fr;
   }
 
@@ -4424,7 +4465,7 @@ blockquote {
   }
 
   .section_amenities {
-    padding-top: 7.5rem;
+    padding-top: 9.38rem;
   }
 
   .amenities_grid {
@@ -4436,8 +4477,18 @@ blockquote {
     grid-column: span 3;
   }
 
+  .shop_mobile-button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .menu_item-text.u-h3.is--active {
+    color: var(--brand--primary-100);
+  }
+
   .header_middle.u-hflex-center-top {
     grid-column: span 4;
+    position: absolute;
   }
 
   .hero_logo-wrap {
@@ -4450,10 +4501,11 @@ blockquote {
   }
 
   .header_booknow {
-    display: none;
+    display: flex;
   }
 }
 
 #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecce-cafbf06b, #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecfb-cafbf06b {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
+

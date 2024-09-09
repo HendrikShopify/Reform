@@ -2,6 +2,7 @@ let mm = gsap.matchMedia();
 
 let heroLogo = document.querySelector(".hero_logo");
 let headerLogoWrap = document.querySelector(".header_logo-inner-wrap");
+let headerBookNow = document.querySelector(".header_booknow");
 
 function heroLogoAnimation(element) {
   let state = Flip.getState(heroLogo, { props: "all" });
@@ -11,8 +12,27 @@ function heroLogoAnimation(element) {
     scrollTrigger: {
       trigger: ".page_main",
       start: "top top",
-      end: "685",
+      end: "460",
       scrub: 0.5,
+      onEnter: () => {
+        // Add the 'final-state' class when the ScrollTrigger enters
+        document.body.classList.remove('final-state');
+      },
+      onLeave: () => {
+        // Remove the 'final-state' class when the ScrollTrigger leaves
+        document.body.classList.add('final-state');
+        console.log("left");
+      },
+      onLeaveBack: () => {
+        // Remove the 'final-state' class when scrolling back up
+        document.body.classList.remove('final-state');
+      },
+      onUpdate: (self) => {
+        // Check the progress; if less than 1 (not fully complete), remove the class
+        if (self.progress < 1) {
+          document.body.classList.remove('final-state');
+        }
+      },
     }
   });
 
@@ -38,6 +58,17 @@ function heroLogoAnimation(element) {
       ease: "none",
     }, 0.5);
   });
+
+  // Animation for screens smaller than 480px
+  mm.add("(max-width: 479px)", () => {
+    // Set opacity of .header_booknow to 0 on smaller screens
+    combinedTimeline.to(headerBookNow, {
+      opacity: 0,
+      duration: 0.75,
+      ease: "power1.out",
+    }, 0);
+  });
+
 }
 
 window.scrollTo(0, 0);

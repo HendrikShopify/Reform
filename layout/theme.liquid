@@ -9,6 +9,9 @@
       <link rel="icon" type="image/png" href="{{ 'Favicon.png' | asset_img_url: width: 32, height: 32 }}">
     
     <title>
+      {% unless template.name == 'index' %}
+        REFORM ROOM | 
+      {% endunless %}
       {{ page_title }}
     </title>
 
@@ -26,8 +29,8 @@
     {{ 'project.css' | asset_url | stylesheet_tag }}
 
     <style>
-/* 
-.preloader {
+
+/* .preloader {
   display: "flex"!important;
 } */
 

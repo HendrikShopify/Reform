@@ -5,7 +5,7 @@
 <section data-theme="inherit" class="section_classes">
         <div class="padding-global padding-section-huge is--classes">
           <div class="classes_comp u-vflex-stretch-top u-gap-small">
-            <h2 split-heading class="u-h1">{{  section.settings.title }}</h2>
+            <h2 fade-up class="u-h1">{{  section.settings.title }}</h2>
             <div class="classes_grid u-grid-12-col">
               {% for block in section.blocks %}
               <a href="{{ block.settings.url }}" class="classes_class u-vflex-stretch-top u-gap-small">
@@ -14,9 +14,9 @@
               </a>
              {% endfor %}
             </div>
-            <div class="margin-top margin-large u-vflex-left-top u-gap-small">
-              <p fade-up class="max-width-xlarge">{{ section.settings.description }}</p>
-              <a fade-up href="{{ section.settings.global_link }}">
+            <div fade-up class="margin-top margin-large u-vflex-left-top u-gap-small">
+              <p class="max-width-xlarge">{{ section.settings.description }}</p>
+              <a href="{{ section.settings.global_link }}">
                 <div class="u-allcaps u-primary-medium">{{ section.settings.cta}}</div>
                 <div class="button-link_underscore"></div>
               </a>

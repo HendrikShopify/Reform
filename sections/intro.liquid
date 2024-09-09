@@ -10,13 +10,13 @@
               <div class="intro_menu u-vflex-right-top u-gap-tiny hide-mobile-portrait">
 
               {% for link in linklists.home-hero-menu.links %}
-                <a href="{{ link.url }}" class="intro_link u-allcaps u-text-align-right">
+                <a href="{{ link.url }}" class="intro_link u-allcaps u-text-align-right u-primary-medium">
                   <div>{{ link.title }}</div>
                 </a>
               {% endfor %}
               </div>
             </div>
-            <div  class="intro_visual overflow-hidden">
+            <div class="intro_visual overflow-hidden">
             
             {% unless section.settings.video %}
               <img src="{{ section.settings.image | img_url: "master" }}" loading="lazy" alt="{{ section.settings.image }}">
@@ -30,9 +30,9 @@
 
            
             </div>
-            <div class="intro_bottom u-vflex-center-center u-gap-medium">
-              <h1 split-heading class="u-text-align-center u-h2">{{ section.settings.title }}</h1>
-              <p fade-up class="max-width-medium u-text-align-center">{{ section.settings.intro_text_2 }}</p>
+            <div fade-up class="intro_bottom u-vflex-center-center u-gap-medium">
+              <h1 class="u-text-align-center u-h2">{{ section.settings.title }}</h1>
+              <p class="max-width-medium u-text-align-center">{{ section.settings.intro_text_2 }}</p>
             </div>
           </div>
         </div>

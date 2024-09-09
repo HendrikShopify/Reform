@@ -29,7 +29,7 @@
           </svg>
           </div>
           <div>
-            <div class="u-allcaps"><span class="u-primary-medium">{{ section.settings.address_1 }},</span> {{ section.settings.address_2 }}</div>
+            <a href="{{ section.settings.link }}" class="u-allcaps"><span class="u-primary-medium">{{ section.settings.address_1 }},</span> {{ section.settings.address_2 }}</a>
           </div>
         </div>
       </section>
@@ -49,6 +49,11 @@
             "id": "address_2",
             "label": "Address Line 2",
             "default": "Laren"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Google maps link"
           }
           ]
       }

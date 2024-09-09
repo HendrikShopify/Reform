@@ -1,9 +1,9 @@
-<section data-theme="inherit" class="section_collection">
+<section  data-theme="inherit" class="section_collection">
         <div class="padding-global padding-section-small">
           <div class="collection_grid u-grid-12-col">
 
           {% for product in collection.products %}
-             <div class="collection_product">
+             <div fade-up class="collection_product">
               {% render 'product-card', product: product %}
             </div>
           {% endfor %}

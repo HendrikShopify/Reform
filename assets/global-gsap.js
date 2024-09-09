@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tl.from(words, {
       y: "2.25rem",
-      filter: "blur(2px)",
+      filter: "blur(1px)",
       opacity: 0,
       stagger: { each: 0.1, ease: "none", from: isRightToLeft ? "end" : "start" },
       duration: 1.25,
@@ -72,6 +72,7 @@ fadeUp.forEach((el) => {
 
   tl.from(el, {
     y: "5rem",
+
     filter: "blur(2px)",
     opacity: 0,
     duration: 1.25,
@@ -106,11 +107,10 @@ imagesFadeIn.forEach((el) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   
-  gsap.to(".preloader", {
-    duration: 0.5,
+  gsap.set(".preloader", {
+    duration: 0.1,
     opacity: 0,
-    ease: "power3.out",
-    delay: 0.1,
+    delay: 0.11,
     onComplete: () => {
       document.querySelector(".preloader").style.display = "none";
     },

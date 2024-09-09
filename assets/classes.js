@@ -6,23 +6,16 @@ let classesTl = gsap.timeline({
     trigger: ".classes_grid",
     markers: false,
     scrub: false,
-    start: "top 70%"
+    start: "top bottom"
   },
 });
 
-classesTl.fromTo(classesItems, {
-  clipPath: "polygon(5% 5%, 95% 5%, 95% 95%, 5% 95%)",
-}, {
-  clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-  stagger: { amount: 0.2, ease: "power1.out", from: "start" },
-  duration: 1,
-  ease: "power1.out",
-}).from(classImages, {
-  scale: 1.15,
-  filter: "blur(2px)",
+classesTl.from(classImages, {
+  scale: 1.2,
   opacity: 0,
-  stagger: { amount: 0.2, ease: "power1.out", from: "start" },
-  duration: 2.25,
+  rotate: 5,
+  stagger: { amount: 0.35, ease: "power1.out", from: "start" },
+  duration: 3.25,
   ease: "power3.out",
 }, "<");
 
