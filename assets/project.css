@@ -2090,7 +2090,7 @@ blockquote {
 .footer {
   margin-top: auto;
   padding-top: 6.25rem;
-  padding-bottom: 2.81rem;
+  padding-bottom: .81rem;
 }
 
 .footer.is--home {
@@ -3313,6 +3313,10 @@ blockquote {
   display: grid;
 }
 
+.footer_bottom {
+  margin-bottom: 2rem;
+}
+
 .intro_menu-copy.u-vflex-right-top.u-gap-xsmall {
   grid-column-gap: var(--space--extra-small);
   grid-row-gap: var(--space--extra-small);
@@ -3524,7 +3528,6 @@ blockquote {
   background-color: var(--neutrals--neutral-100);
   max-height: 100svh;
   padding-top: 8.13rem;
-  padding-bottom: 2rem;
   display: none;
   position: fixed;
   inset: 0%;
@@ -3601,6 +3604,49 @@ blockquote {
 
 .testtt {
   transform: scale(17);
+}
+
+.product-slider_slide {
+  width: 25%;
+}
+
+.u-allcaps-2 {
+  text-transform: uppercase;
+}
+
+.u-text-large-2 {
+  text-transform: var(--text-large--text-transform);
+  font-size: 1rem;
+  line-height: 1.1em;
+}
+
+.button-3 {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  color: #fff;
+  background-color: #4f4540;
+  border-radius: 100vw;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 6.5rem;
+  height: 2.5rem;
+  padding: .63rem 1rem;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card_image-wrap-2 {
+  z-index: 1;
+}
+
+.product-card_comp {
+  -webkit-backdrop-filter: blur(.75rem);
+  backdrop-filter: blur(.75rem);
+  background-color: #ffffff80;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
 }
 
 @media screen and (max-width: 991px) {
@@ -4285,7 +4331,7 @@ blockquote {
 
 @media screen and (max-width: 479px) {
   body {
-    font-size: .88rem;
+    font-size: .69rem;
   }
 
   .u-text-small {
@@ -4477,6 +4523,10 @@ blockquote {
     grid-column: span 3;
   }
 
+  .menu_item.u-h3 {
+    font-size: .75rem;
+  }
+
   .shop_mobile-button {
     margin-left: auto;
     margin-right: auto;
@@ -4503,9 +4553,12 @@ blockquote {
   .header_booknow {
     display: flex;
   }
+
+  .intro-paragraph.u-text-align-center.max-width-xlarge {
+    max-width: 17.5rem;
+  }
 }
 
 #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecce-cafbf06b, #w-node-_0efc7fe3-4327-cc76-185c-4d03c192ecfb-cafbf06b {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
-

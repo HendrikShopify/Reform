@@ -94,9 +94,9 @@
           </div>
           <ul role="list" class="menu_menu u-vflex-left-top u-gap-xsmall w-list-unstyled">
             {% for link in linklists.main-menu.links %}
-              <li class="menu_item {% if link.url == request.path %}is--current{% endif %}">
+              <li class="menu_item u-h3 {% if link.url == request.path %}is--current{% endif %}">
                 <a href="{{ link.url }}" class="w-inline-block">
-                  <div class="u-h3">{{ link.title }}</div>
+                  <div >{{ link.title }}</div>
                 </a>
               </li>
             {% endfor %}

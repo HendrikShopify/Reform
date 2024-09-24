@@ -13,7 +13,6 @@ let classesTl = gsap.timeline({
 classesTl.from(classImages, {
   scale: 1.2,
   opacity: 0,
-  rotate: 5,
   stagger: { amount: 0.35, ease: "power1.out", from: "start" },
   duration: 3.25,
   ease: "power3.out",

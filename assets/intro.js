@@ -4,14 +4,13 @@ let introTimeline = gsap.timeline({
     scrollTrigger: {
         trigger: introImage,
         markers: false,
-        start: "top bottom",
+        start: "top bottom"
     },
     });
 
 introTimeline.from(introImage, {
     scale: "1.2",
     filter: "blur(2px)",
-    rotate: 5,
     duration: 3.25,
     ease: "power3.out",
 });
