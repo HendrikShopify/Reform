@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "home-hero": {
@@ -21,7 +21,7 @@
       "type": "intro",
       "settings": {
         "intro_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "image": "shopify:\/\/shop_images\/woman_doing_pilatus.jpg",
+        "image": "shopify://shop_images/woman_doing_pilatus.jpg",
         "title": "reformer pilates boutique studio",
         "intro_text_2": "A modern reformer pilates boutique studio in Laren, North-Holland. We offer high-quality reformer pilates lessons for all levels."
       }
@@ -32,33 +32,33 @@
         "class_Ufk6Kk": {
           "type": "class",
           "settings": {
-            "image": "shopify:\/\/shop_images\/a_pair_of_white_dumbells.jpg",
+            "image": "shopify://shop_images/a_pair_of_white_dumbells.jpg",
             "title": "Level I",
-            "url": "shopify:\/\/pages\/classes"
+            "url": "shopify://pages/our-pt-schedule"
           }
         },
         "class_iXXtzt": {
           "type": "class",
           "settings": {
-            "image": "shopify:\/\/shop_images\/woman_doing_pilatus_on_gray_yoga_mat.jpg",
+            "image": "shopify://shop_images/woman_doing_pilatus_on_gray_yoga_mat.jpg",
             "title": "Level II",
-            "url": "shopify:\/\/pages\/classes"
+            "url": "shopify://pages/our-pt-schedule"
           }
         },
         "class_HbncgQ": {
           "type": "class",
           "settings": {
-            "image": "shopify:\/\/shop_images\/weight_machine.jpg",
+            "image": "shopify://shop_images/weight_machine.jpg",
             "title": "Level III",
-            "url": "shopify:\/\/pages\/classes"
+            "url": "shopify://pages/our-pt-schedule"
           }
         },
         "class_dBF8MQ": {
           "type": "class",
           "settings": {
-            "image": "shopify:\/\/shop_images\/woman_stretching.jpg",
+            "image": "shopify://shop_images/woman_stretching.jpg",
             "title": "(post) pregnant",
-            "url": "shopify:\/\/pages\/classes"
+            "url": "shopify://pages/our-pt-schedule"
           }
         }
       },
@@ -72,36 +72,36 @@
         "title": "Our classes",
         "description": "Lorem reform dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere",
         "cta": "View all classes",
-        "global_link": "shopify:\/\/pages\/classes"
+        "global_link": "shopify://pages/our-pt-schedule"
       }
     },
     "pack": {
       "type": "pack",
       "settings": {
-        "image_1": "shopify:\/\/shop_images\/two_hands_holding_a_bottle_of_water.jpg",
-        "image_2": "shopify:\/\/shop_images\/a_pair_of_white_dumbells_7c366210-b4e6-476d-887b-4f66ba37950c.jpg",
+        "image_1": "shopify://shop_images/two_hands_holding_a_bottle_of_water.jpg",
+        "image_2": "shopify://shop_images/a_pair_of_white_dumbells_7c366210-b4e6-476d-887b-4f66ba37950c.jpg",
         "title": "Packages",
         "package_1_title": "Class packs",
         "package_1_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
         "package_1_cta": "Read more",
-        "package_1_url": "shopify:\/\/pages\/classes",
+        "package_1_url": "shopify://pages/our-pt-schedule",
         "package_2_title": "Memberships",
         "package_2_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
         "package_2_cta": "Read more",
-        "package_2_url": "shopify:\/\/pages\/packages",
+        "package_2_url": "shopify://pages/packages",
         "package_3_title": "Personal training",
         "package_3_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
         "package_3_cta": "Read more",
-        "package_3_url": "shopify:\/\/pages\/personal-training"
+        "package_3_url": "shopify://pages/personal-training"
       }
     },
     "shop": {
       "type": "shop",
       "settings": {
-        "image": "shopify:\/\/shop_images\/a_gym_bag_with_a_pair_of_sport_shoes_next_to_it.jpg",
+        "image": "shopify://shop_images/a_gym_bag_with_a_pair_of_sport_shoes_next_to_it.jpg",
         "title": "Shop our <br> reformer <br> items",
         "cta": "Go to shop",
-        "url": "shopify:\/\/collections\/shop"
+        "url": "shopify://collections/shop"
       }
     }
   },
