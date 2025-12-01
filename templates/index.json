@@ -34,7 +34,7 @@
           "settings": {
             "image": "shopify://shop_images/a_pair_of_white_dumbells.jpg",
             "title": "Level I",
-            "url": "shopify://pages/our-pt-schedule"
+            "url": "shopify://pages/pt-schedule"
           }
         },
         "class_iXXtzt": {
@@ -42,7 +42,7 @@
           "settings": {
             "image": "shopify://shop_images/woman_doing_pilatus_on_gray_yoga_mat.jpg",
             "title": "Level II",
-            "url": "shopify://pages/our-pt-schedule"
+            "url": "shopify://pages/pt-schedule"
           }
         },
         "class_HbncgQ": {
@@ -50,7 +50,7 @@
           "settings": {
             "image": "shopify://shop_images/weight_machine.jpg",
             "title": "Level III",
-            "url": "shopify://pages/our-pt-schedule"
+            "url": "shopify://pages/pt-schedule"
           }
         },
         "class_dBF8MQ": {
@@ -58,7 +58,7 @@
           "settings": {
             "image": "shopify://shop_images/woman_stretching.jpg",
             "title": "(post) pregnant",
-            "url": "shopify://pages/our-pt-schedule"
+            "url": "shopify://pages/pt-schedule"
           }
         }
       },
@@ -72,7 +72,7 @@
         "title": "Our classes",
         "description": "Lorem reform dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere",
         "cta": "View all classes",
-        "global_link": "shopify://pages/our-pt-schedule"
+        "global_link": "shopify://pages/pt-schedule"
       }
     },
     "pack": {
@@ -84,7 +84,7 @@
         "package_1_title": "Class packs",
         "package_1_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
         "package_1_cta": "Read more",
-        "package_1_url": "shopify://pages/our-pt-schedule",
+        "package_1_url": "shopify://pages/pt-schedule",
         "package_2_title": "Memberships",
         "package_2_description": "Lorem ipsum dolor sit amet consectetur. Leo in amet quis sed. Facilisi sit congue sed mi felis pellentesque aliquam. Varius ullamcorper enim auctor sit ut lectus ullamcorper et. Porttitor donec egestas vestibulum neque praesent habitasse.",
         "package_2_cta": "Read more",
