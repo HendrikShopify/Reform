@@ -29,7 +29,7 @@
               <a class="u-text-small" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
             </li>
           </ol>        
-    {%- when 'collection' and collection.handle -%}
+    {%- when 'collection' -%}
         <ol role="list" class="u-hflex-left-center w-list-unstyled">
         <li class="breadcrumbs_item">
               <a class="u-text-small" href="{{ shop.url }}">Home</a>
@@ -71,3 +71,13 @@
          
           
           
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- when 'collection' and collection.handle -%}"
+  to: "{%- when 'collection' -%}"
+  position: 1265..1290
+{% endcomment %}
